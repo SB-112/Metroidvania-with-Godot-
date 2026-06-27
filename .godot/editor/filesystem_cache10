@@ -1,20 +1,20 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1782485861
+::res://::1782569857
 icon.svg::CompressedTexture2D::5258903077434684188::1782478813::1782485862::1::::<><><>0<>0<>7956a559a4fe18077f788cfe2dc35aa3<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1782478881
-::res://assets/background/::1782478939
+::res://assets/background/::1782485862
 1 - Leaf_top.png::CompressedTexture2D::5010045629660517604::1782478938::1782485862::1::::<><><>0<>0<>f86878dca5591235e9008ad5b41ef886<>res://.godot/imported/1 - Leaf_top.png-33932b8730b887ad5fe108e8e2be43a4.ctex::
 2 - Trees.png::CompressedTexture2D::529502164608895532::1782478938::1782485862::1::::<><><>0<>0<>f0c114fa9d0ae2214a5675357cc661bd<>res://.godot/imported/2 - Trees.png-cdb15f0e2f2e5e495243fd30ac3584f1.ctex::
 3 - Bottom_leaf_piles.png::CompressedTexture2D::8270910969409912113::1782478938::1782485862::1::::<><><>0<>0<>5ada6fa0027ff9ec980d2847a537e361<>res://.godot/imported/3 - Bottom_leaf_piles.png-5cca67dd886e5dd48761ad27a3eb023d.ctex::
 4 - Tree_row_BG_1.png::CompressedTexture2D::6673033958292317180::1782478938::1782485862::1::::<><><>0<>0<>f42ed079d4a5263e19173ad3665d1c8d<>res://.godot/imported/4 - Tree_row_BG_1.png-6cc8ff459d103464e19b91c50922b5df.ctex::
 5 - Tree_row_BG_2.png::CompressedTexture2D::6389477866872178604::1782478938::1782485862::1::::<><><>0<>0<>b0fbcedad338532bd5a72a1cfeacf253<>res://.godot/imported/5 - Tree_row_BG_2.png-51981aee6c737bb7f4207684c0bba21d.ctex::
 6 - Distant_trees.png::CompressedTexture2D::3662947245526618505::1782478938::1782485862::1::::<><><>0<>0<>61b190f654e1939a56d66c1db9bfa052<>res://.godot/imported/6 - Distant_trees.png-7308a2b37c8d0cc8f31685c34f56fe74.ctex::
-::res://assets/player/::1782484594
+::res://assets/player/::1782485862
 Sprite_Sheet.png::CompressedTexture2D::4194432753429615962::1782484407::1782485862::1::::<><><>0<>0<>948edcf3207de20063be80b22ba3e3bd<>res://.godot/imported/Sprite_Sheet.png-8f9c35785c75997861ef1c1bedc5c750.ctex::
-::res://assets/terrain/::1782484427
+::res://assets/terrain/::1782485862
 Terrain (16 x 16).png::CompressedTexture2D::5574496179238670708::1782478909::1782485862::1::::<><><>0<>0<>4c72041ff928c104d5c6dbb80f060e61<>res://.godot/imported/Terrain (16 x 16).png-f54891e4e8717f39eadc60092ced6165.ctex::
-::res://scenes/::1782485632
-player.gd::GDScript::4802849881536330908::1782485336::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::727393690242955344::1782485632::0::1::::<><><>0<>0<><>::uid://caosiavuq7n6k::::res://scenes/player.gd<>uid://b002xu86lymes::::res://assets/player/Sprite_Sheet.png
-test.tscn::PackedScene::2642521531308192551::1782480838::0::1::::<><><>0<>0<><>::uid://clolexdlhpvma::::res://assets/terrain/Terrain (16 x 16).png<>uid://kmmckm86yl33::::res://scenes/player.tscn
-::res://scripts/::1782478851
+::res://scenes/::1782568725
+player.tscn::PackedScene::727393690242955344::1782568725::0::1::::<><><>0<>0<><>::uid://caosiavuq7n6k::::res://scripts/player.gd<>uid://b002xu86lymes::::res://assets/player/Sprite_Sheet.png
+test.tscn::PackedScene::2642521531308192551::1782564855::0::1::::<><><>0<>0<><>::uid://clolexdlhpvma::::res://assets/terrain/Terrain (16 x 16).png<>uid://kmmckm86yl33::::res://scenes/player.tscn
+::res://scripts/::1782568684
+player.gd::GDScript::4802849881536330908::1782564967::0::1::::<>CharacterBody2D<><>0<>0<><>::

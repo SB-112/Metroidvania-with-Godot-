@@ -11,11 +11,11 @@ enum STATES {
 
 const FALL_GRAVITY := 1500.0
 const FALL_VELOCITY := 1000.0
-const WALK_VELOCITY := 500.0
-const ACCELERATION := 2000.0
-const JUMP_VELOCITY := -850.0
+const WALK_VELOCITY := 480.0
+const ACCELERATION := 2500.0
+const JUMP_VELOCITY := -550.0
 const JUMP_DECELERATION := 1500.0
-const DOUBLE_JUMP_VELOCITY := -650
+const DOUBLE_JUMP_VELOCITY := -500
 
 @onready var anim: AnimatedSprite2D = %AnimatedSprite2D
 @onready var coyote_timer: Timer = $CoyoteTimer
@@ -80,7 +80,7 @@ func process_state(delta: float) -> void:
 			handle_movement(delta)
 			
 			if Input.is_action_just_released("jump") or velocity.y >= 0:
-				velocity.y *= 0.2
+				velocity.y *= 0.1
 				switch_state(STATES.FALL)	
 				
 				
