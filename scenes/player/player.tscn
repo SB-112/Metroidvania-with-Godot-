@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://caosiavuq7n6k" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b002xu86lymes" path="res://assets/player/Sprite_Sheet.png" id="2_g2els"]
+[ext_resource type="AudioStream" uid="uid://wci2oo5hm4ej" path="res://assets/sfx/run.ogg" id="3_gmlin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -230,3 +231,6 @@ shape = SubResource("RectangleShape2D_66l5y")
 process_callback = 0
 wait_time = 0.2
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=640605101]
+stream = ExtResource("3_gmlin")

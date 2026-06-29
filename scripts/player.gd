@@ -5,7 +5,6 @@ enum STATES {
 	FLOOR,
 	JUMP,
 	FALL,
-	RUN,
 	DOUBLE_JUMP
 }
 
@@ -13,12 +12,16 @@ const FALL_GRAVITY := 1500.0
 const FALL_VELOCITY := 1000.0
 const WALK_VELOCITY := 480.0
 const ACCELERATION := 2500.0
-const JUMP_VELOCITY := -550.0
+const JUMP_VELOCITY := -650.0
 const JUMP_DECELERATION := 1500.0
-const DOUBLE_JUMP_VELOCITY := -500
+const DOUBLE_JUMP_VELOCITY := -550
 
 @onready var anim: AnimatedSprite2D = %AnimatedSprite2D
 @onready var coyote_timer: Timer = $CoyoteTimer
+
+#sfx
+@onready var run: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 
 var active_state := STATES.FALL
 var can_double_jump := false
@@ -33,6 +36,9 @@ func _physics_process(delta: float) -> void:
 func switch_state(to_state: STATES) ->void:
 	var previous_state = active_state
 	active_state = to_state
+	
+	if previous_state == STATES.FLOOR and to_state != STATES.FLOOR:
+		run.stop()
 	
 	match active_state:
 		STATES.FALL:
@@ -67,8 +73,11 @@ func process_state(delta: float) -> void:
 		STATES.FLOOR:
 			if Input.get_axis("move_left", "move_right"):
 				anim.play("run")
+				if !run.playing:
+					run.play()
 			else:
-				anim.play("idle")	
+				anim.play("idle")
+				run.stop()
 			handle_movement(delta)	
 			
 			if not is_on_floor():

@@ -1,5 +1,4 @@
-res://scenes/parallax_background.tscn
 res://scenes/test.tscn
-res://scenes/player.tscn
-res://scripts/camera_2d.gd
+res://scenes/levels/test.tscn
+res://scenes/player/player.tscn
 res://scripts/player.gd
