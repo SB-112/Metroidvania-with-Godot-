@@ -1,4 +1,2 @@
-res://scenes/test.tscn
 res://scenes/levels/test.tscn
 res://scenes/player/player.tscn
-res://scripts/player.gd

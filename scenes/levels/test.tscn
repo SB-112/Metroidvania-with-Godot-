@@ -89,3 +89,6 @@ limit_right = 2239
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 script = ExtResource("4_kw13u")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1884416611]
+color = Color(0.078431375, 0.101960786, 0.16078432, 1)
