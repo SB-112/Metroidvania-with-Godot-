@@ -1,6 +1,12 @@
+Label
+TextureRect
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+GPUParticles2D
+TileMapLayer
 PointLight2D
 CanvasModulate
-TileMapLayer
 Timer
 AudioStreamPlayer2D
 Camera2D

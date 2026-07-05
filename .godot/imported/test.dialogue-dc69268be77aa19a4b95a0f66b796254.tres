@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_d5lfu"]
+
+[resource]
+script = ExtResource("1_d5lfu")
+using_states = PackedStringArray()
+titles = {
+"start": "1"
+}
+character_names = PackedStringArray("Tusk", "Wanderer")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Tusk",
+&"id": "1",
+&"next_id": "2",
+&"text": "Answer my question if you wish to pass.",
+&"type": "dialogue"
+},
+"2": {
+&"character": "Wanderer",
+&"id": "2",
+&"next_id": "3",
+&"text": ". . .",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Tusk",
+&"id": "3",
+&"next_id": "4",
+&"text": "Are you GAY?",
+&"type": "dialogue"
+},
+"4": {
+&"id": "4",
+&"next_id": "5",
+&"responses": PackedStringArray("4", "6"),
+&"text": "Nope",
+&"type": "response"
+},
+"5": {
+&"character": "Tusk",
+&"id": "5",
+&"next_id": "8",
+&"text": "You are Lying!!",
+&"type": "dialogue"
+},
+"6": {
+&"id": "6",
+&"next_id": "7",
+&"text": "Yes",
+&"type": "response"
+},
+"7": {
+&"character": "Tusk",
+&"id": "7",
+&"next_id": "8",
+&"text": "I know that from the start.",
+&"type": "dialogue"
+},
+"8": {
+&"id": "8",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ start
+Tusk: Answer my question if you wish to pass.
+Wanderer: . . .
+Tusk: Are you GAY?
+- Nope
+	Tusk: You are Lying!!
+- Yes
+	Tusk: I know that from the start."
+metadata/dialogue_manager_version = "3.10.4"

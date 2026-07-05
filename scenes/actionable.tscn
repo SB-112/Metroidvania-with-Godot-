@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bx4u1uxfqj082"]
+
+[ext_resource type="Script" uid="uid://b07fdqav8n74g" path="res://scripts/actionable.gd" id="1_7304x"]
+
+[node name="Actionable" type="Area2D" unique_id=1263258694]
+collision_layer = 16
+script = ExtResource("1_7304x")
+
+[node name="Label" type="Label" parent="." unique_id=400794394]
+offset_left = -2.0
+offset_top = -30.0
+offset_right = 4.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(0.0253638, 0.0253638, 0.025363795, 1)
+theme_override_font_sizes/font_size = 10
+text = "E"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -10,11 +10,11 @@ enum STATES {
 #player attributes
 const FALL_GRAVITY := 1500.0
 const FALL_VELOCITY := 1000.0
-const WALK_VELOCITY := 480.0
+const WALK_VELOCITY := 350.0
 const ACCELERATION := 2500.0
-const JUMP_VELOCITY := -650.0
-const JUMP_DECELERATION := 1500.0
-const DOUBLE_JUMP_VELOCITY := -550
+const JUMP_VELOCITY := -490.0
+const JUMP_DECELERATION := 1300.0
+const DOUBLE_JUMP_VELOCITY := -420
 #animatedsprite2d
 @onready var anim: AnimatedSprite2D = %AnimatedSprite2D
 @onready var coyote_timer: Timer = $CoyoteTimer
@@ -25,7 +25,11 @@ const DOUBLE_JUMP_VELOCITY := -550
 @onready var player_land_sfx: AudioStreamPlayer2D = $PlayerLandSFX
 @onready var player_double_jump_sfx: AudioStreamPlayer2D = $PlayerDoubleJumpSFX
 
+#dialogue actionable
+@onready var actionable_detector: Area2D = $ActionableDetector
 
+#disable movement
+var can_move:bool = true
 
 #state machine
 var active_state := STATES.FALL
@@ -33,8 +37,11 @@ var can_double_jump := false
 
 func _ready() -> void:
 	switch_state(active_state)
-
+	
 func _physics_process(delta: float) -> void:
+	if !can_move:
+		return
+		
 	process_state(delta)
 	move_and_slide()
 	
@@ -51,6 +58,7 @@ func switch_state(to_state: STATES) ->void:
 				anim.play("fall")
 			if previous_state == STATES.FLOOR:
 				coyote_timer.start()
+				player_jump_sfx.play()
 		STATES.FLOOR:
 			can_double_jump = true		
 			player_land_sfx.play()
@@ -106,3 +114,10 @@ func handle_movement(delta):
 	if input_direction:
 		anim.flip_h = input_direction < 0
 	velocity.x = move_toward(velocity.x, input_direction * WALK_VELOCITY, ACCELERATION * delta)	
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("interact"):
+		var actionables = actionable_detector.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return

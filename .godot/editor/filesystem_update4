@@ -1,2 +1,9 @@
+res://scenes/decoration/parallax_background.tscn
 res://scenes/levels/test.tscn
+res://scenes/levels/level0.tscn
+res://scripts/player.gd
+res://scenes/npc/pig_npc.tscn
+res://scripts/pig_npc.gd
+res://scripts/actionable.gd
 res://scenes/player/player.tscn
+res://scenes/actionable.tscn
