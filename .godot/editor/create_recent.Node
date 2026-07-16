@@ -1,3 +1,5 @@
+Timer
+RayCast2D
 Label
 TextureRect
 CollisionShape2D
@@ -7,8 +9,6 @@ GPUParticles2D
 TileMapLayer
 PointLight2D
 CanvasModulate
-Timer
 AudioStreamPlayer2D
 Camera2D
 Sprite2D
-Parallax2D

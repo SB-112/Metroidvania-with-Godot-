@@ -1,9 +1,10 @@
-res://scenes/decoration/parallax_background.tscn
-res://scenes/levels/test.tscn
 res://scenes/levels/level0.tscn
-res://scripts/player.gd
-res://scenes/npc/pig_npc.tscn
-res://scripts/pig_npc.gd
-res://scripts/actionable.gd
+res://addons/phantom_camera/themes/theme.tres
 res://scenes/player/player.tscn
-res://scenes/actionable.tscn
+res://scripts/player.gd
+res://scenes/Winter_Camera.tscn
+res://scenes/decoration/parallax_background.tscn
+res://scenes/Camera.tscn
+res://scripts/camera.gd
+res://scenes/particles/Snow_Particles.tscn
+res://scripts/snow_particles.gd

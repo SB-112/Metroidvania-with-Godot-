@@ -5,25 +5,38 @@ enum STATES {
 	FLOOR,
 	JUMP,
 	FALL,
-	DOUBLE_JUMP
+	DOUBLE_JUMP,
+	DASH
 }
+	
 #player attributes
 const FALL_GRAVITY := 1500.0
 const FALL_VELOCITY := 1000.0
-const WALK_VELOCITY := 350.0
+const WALK_VELOCITY := 330.0
 const ACCELERATION := 2500.0
-const JUMP_VELOCITY := -490.0
+const JUMP_VELOCITY := -540.0
 const JUMP_DECELERATION := 1300.0
-const DOUBLE_JUMP_VELOCITY := -420
+const DOUBLE_JUMP_VELOCITY := -450
+const WALL_SLIDE_GRAVITY := 300.0
+const WALL_SLIDE_VELCITY := 500.0
+const DASH_SPEED := 700.0
+
+
 #animatedsprite2d
 @onready var anim: AnimatedSprite2D = %AnimatedSprite2D
 @onready var coyote_timer: Timer = $CoyoteTimer
+
 
 #sfx
 @onready var player_footsteps_sfx: AudioStreamPlayer2D = $PlayerFootstepsSFX
 @onready var player_jump_sfx: AudioStreamPlayer2D = $PlayerJumpSFX
 @onready var player_land_sfx: AudioStreamPlayer2D = $PlayerLandSFX
 @onready var player_double_jump_sfx: AudioStreamPlayer2D = $PlayerDoubleJumpSFX
+
+#dash state
+@onready var dash_timer: Timer = $DashTimer
+var dash_direction := 1
+var can_dash := true
 
 #dialogue actionable
 @onready var actionable_detector: Area2D = $ActionableDetector
@@ -62,6 +75,7 @@ func switch_state(to_state: STATES) ->void:
 		STATES.FLOOR:
 			can_double_jump = true		
 			player_land_sfx.play()
+			can_dash = true
 		STATES.JUMP:
 			anim.play("jump");
 			velocity.y = JUMP_VELOCITY
@@ -72,10 +86,23 @@ func switch_state(to_state: STATES) ->void:
 			velocity.y = DOUBLE_JUMP_VELOCITY
 			can_double_jump = false	
 			player_double_jump_sfx.play(0.08)
+		STATES.DASH:
+			dash_timer.start()
+			player_double_jump_sfx.play()
+			anim.play("dash")
+			can_dash = false
+			dash_direction = Input.get_axis("move_left", "move_right")
+			if dash_direction == 0:
+				dash_direction = -1 if anim.flip_h else 1
+			velocity.x = DASH_SPEED * dash_direction
+			velocity.y = 0		
 	
 func process_state(delta: float) -> void:
 	match active_state:
 		STATES.FALL:
+			if try_dash():
+				return
+				
 			velocity.y = move_toward(velocity.y, FALL_VELOCITY, FALL_GRAVITY * delta)
 			handle_movement(delta)
 			
@@ -87,6 +114,9 @@ func process_state(delta: float) -> void:
 				elif can_double_jump:
 					switch_state(STATES.DOUBLE_JUMP)	
 		STATES.FLOOR:
+			if try_dash():
+				return
+				
 			if Input.get_axis("move_left", "move_right"):
 				anim.play("run")
 				if !player_footsteps_sfx.playing:
@@ -101,12 +131,18 @@ func process_state(delta: float) -> void:
 			elif Input.is_action_just_pressed("jump"):
 				switch_state(STATES.JUMP)		
 		STATES.JUMP, STATES.DOUBLE_JUMP:
+			if try_dash():
+				return
+				
 			velocity.y = move_toward(velocity.y, 0, JUMP_DECELERATION * delta)	
 			handle_movement(delta)
 			
 			if Input.is_action_just_released("jump") or velocity.y >= 0:
 				velocity.y *= 0.1
 				switch_state(STATES.FALL)	
+		STATES.DASH:
+			velocity.x =DASH_SPEED * dash_direction
+			velocity.y = 0		
 				
 				
 func handle_movement(delta):
@@ -121,3 +157,16 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
+
+
+func _on_dash_timer_timeout() -> void:
+	if is_on_floor():
+		switch_state(STATES.FLOOR)
+	else:
+		switch_state(STATES.FALL)	
+
+func try_dash() -> bool:
+	if Input.is_action_just_pressed("dash") and can_dash:
+		switch_state(STATES.DASH)
+		return true
+	return false		

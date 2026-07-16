@@ -158,7 +158,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"dash",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -274,7 +274,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kauvy")
 animation = &"dash"
 autoplay = "idle"
-frame_progress = 0.1284276
+frame = 1
+frame_progress = 0.1597954
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=948084442]
 position = Vector2(0, 7)
@@ -287,20 +288,20 @@ one_shot = true
 
 [node name="PlayerFootstepsSFX" type="AudioStreamPlayer2D" parent="." unique_id=640605101]
 stream = ExtResource("3_gmlin")
-volume_db = -5.0
+volume_db = -20.0
 
 [node name="PlayerJumpSFX" type="AudioStreamPlayer2D" parent="." unique_id=426653994]
 stream = ExtResource("4_lvxji")
-volume_db = -5.0
+volume_db = -20.0
 
 [node name="PlayerLandSFX" type="AudioStreamPlayer2D" parent="." unique_id=57977138]
 stream = ExtResource("5_p47bc")
-volume_db = -25.0
+volume_db = -35.0
 pitch_scale = 0.55
 
 [node name="PlayerDoubleJumpSFX" type="AudioStreamPlayer2D" parent="." unique_id=895780659]
 stream = ExtResource("6_75vfm")
-volume_db = -5.0
+volume_db = -20.0
 pitch_scale = 0.55
 
 [node name="ActionableDetector" type="Area2D" parent="." unique_id=1955612545]
@@ -310,3 +311,10 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableDetector" unique_id=660841055]
 position = Vector2(-5, 7)
 shape = SubResource("CircleShape2D_kauvy")
+
+[node name="DashTimer" type="Timer" parent="." unique_id=101082218]
+process_callback = 0
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
