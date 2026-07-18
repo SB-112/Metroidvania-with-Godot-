@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c1athkumdnw0d" path="res://scenes/npc/pig_npc.tscn" id="5_ry65h"]
 [ext_resource type="PackedScene" uid="uid://csbad0qxaj2vq" path="res://scenes/particles/Snow_Particles.tscn" id="5_vals0"]
 [ext_resource type="PackedScene" uid="uid://bx4u1uxfqj082" path="res://scenes/actionable.tscn" id="6_d0grl"]
-[ext_resource type="Resource" uid="uid://xasq0jtimlj4" path="res://dialogues/test.dialogue" id="7_1nvli"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ry65h"]
 texture = ExtResource("4_5kr0j")
@@ -425,13 +424,11 @@ visible = false
 color = Color(0.078431375, 0.101960786, 0.16078432, 1)
 
 [node name="PigNPC" parent="." unique_id=1618033260 instance=ExtResource("5_ry65h")]
-visible = false
-position = Vector2(1133, 318)
+position = Vector2(602, 421)
 scale = Vector2(3, 3)
 
 [node name="Actionable" parent="PigNPC" unique_id=1263258694 instance=ExtResource("6_d0grl")]
 position = Vector2(1.6666667, 5)
-dialogue_resource = ExtResource("7_1nvli")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PigNPC/Actionable" unique_id=2135264289]
 position = Vector2(0.9999999, -0.33333397)

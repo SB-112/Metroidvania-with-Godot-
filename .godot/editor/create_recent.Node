@@ -1,3 +1,5 @@
+ColorRect
+CanvasLayer
 Timer
 RayCast2D
 Label
@@ -11,4 +13,3 @@ PointLight2D
 CanvasModulate
 AudioStreamPlayer2D
 Camera2D
-Sprite2D

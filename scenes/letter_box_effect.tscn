@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://gni1ugqdbdqk"]
+
+[ext_resource type="Script" uid="uid://cnwn20m46aofw" path="res://scripts/letter_box_effect.gd" id="1_1p4rs"]
+
+[node name="LetterBoxEffect" type="CanvasLayer" unique_id=1050907720]
+process_mode = 3
+layer = 10
+script = ExtResource("1_1p4rs")
+
+[node name="TopBar" type="ColorRect" parent="." unique_id=2136648134]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BottomBar" type="ColorRect" parent="." unique_id=306862066]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -113.0
+offset_right = 1.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)

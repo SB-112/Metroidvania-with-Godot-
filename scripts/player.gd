@@ -42,7 +42,7 @@ var can_dash := true
 @onready var actionable_detector: Area2D = $ActionableDetector
 
 #disable movement
-var can_move:bool = true
+var can_move:bool = true		
 
 #state machine
 var active_state := STATES.FALL
@@ -155,8 +155,15 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionable_detector.get_overlapping_areas()
 		if actionables.size() > 0:
+			can_move = false
+			LetterBoxEffect.show_bars()
 			actionables[0].action()
+			DialogueManager.dialogue_ended.connect(_on_dialogue_finished, CONNECT_ONE_SHOT)
 			return
+			
+func _on_dialogue_finished(_resource) -> void:
+	LetterBoxEffect.hide_bars()
+	can_move = true
 
 
 func _on_dash_timer_timeout() -> void:
