@@ -28,10 +28,10 @@ const DASH_SPEED := 700.0
 
 
 #sfx
-@onready var player_footsteps_sfx: AudioStreamPlayer2D = $PlayerFootstepsSFX
-@onready var player_jump_sfx: AudioStreamPlayer2D = $PlayerJumpSFX
-@onready var player_land_sfx: AudioStreamPlayer2D = $PlayerLandSFX
-@onready var player_double_jump_sfx: AudioStreamPlayer2D = $PlayerDoubleJumpSFX
+@onready var player_footsteps_sfx: AudioStreamPlayer2D = $SFX/PlayerFootstepsSFX
+@onready var player_jump_sfx: AudioStreamPlayer2D = $SFX/PlayerJumpSFX
+@onready var player_land_sfx: AudioStreamPlayer2D = $SFX/PlayerLandSFX
+@onready var player_double_jump_sfx: AudioStreamPlayer2D = $SFX/PlayerDoubleJumpSFX
 
 #dash state
 @onready var dash_timer: Timer = $DashTimer
@@ -124,6 +124,7 @@ func process_state(delta: float) -> void:
 			else:
 				anim.play("idle")
 				player_footsteps_sfx.stop()
+				
 			handle_movement(delta)	
 			
 			if not is_on_floor():

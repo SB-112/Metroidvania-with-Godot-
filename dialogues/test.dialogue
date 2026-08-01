@@ -1,10 +1,28 @@
 ~ start
-Tusk: Answer my question if you wish to pass.
-Wanderer: . . .
-Tusk: Are you [wait=1]GAY?
-- Nope
-	Tusk: You are [wave]Lying[/wave]!!
-- Yes
-	Tusk: I know that from the start.
-Tusk: What can I assist you with my friend?
-Tusk: I am [wave]Tusk[/wave] , The great humanoid pig of this mountain	
+Tusk: Oh — hey! Didn't expect to see anyone out this way.
+Wanderer: ...
+Tusk: Not much of a talker, huh.
+- "What is this place?"
+    => what_is_this_place
+- "Are you alone?"
+    => are_you_alone
+- "I don't have time for this."
+    => dismissive
+
+~ what_is_this_place
+Tusk: Ruins, mostly. Used to be a real town, before the war got here.
+Tusk: You're not from around here, are you? Don't recognize you.
+=> continue_1
+
+~ are_you_alone
+Tusk: Been alone a while now, yeah. Why, you offering company or trouble?
+=> continue_1
+
+~ dismissive
+Tusk: Fair enough. Not everyone's in the mood to chat these days.
+=> continue_1
+
+~ continue_1
+Tusk: You look like you've walked a long way. And like you haven't slept in longer.
+Tusk: Not looking for a fight, if that's what you're bracing for.
+=> END

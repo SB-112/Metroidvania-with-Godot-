@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b8in3n0fm7eob"]
+
+[ext_resource type="Script" uid="uid://chvq60rjnxuwx" path="res://scripts/camera_bounds.gd" id="1_qvccg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kauvy"]
+size = Vector2(161, 112)
+
+[node name="CameraBounds" type="Area2D" unique_id=985882497]
+script = ExtResource("1_qvccg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1155062496]
+position = Vector2(70.5, 46)
+shape = SubResource("RectangleShape2D_kauvy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

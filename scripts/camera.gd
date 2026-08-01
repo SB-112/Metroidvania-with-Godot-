@@ -1,15 +1,19 @@
 extends Camera2D
 
-var lookahead_distance = 100.0
-var lookahead_speed = 2.0
+@onready var screen_size: Vector2 = get_viewport_rect().size
+@onready var player = get_parent().get_node("Player")
 
-@onready var player = get_parent()
-
-func _process(delta: float) -> void:
-	var target_offset = 0.0
-	if player.velocity.x > 10:
-		target_offset = lookahead_distance
-	elif player.velocity.x < -10:
-		target_offset = -lookahead_distance
+func _ready() -> void:
+	set_screen_position()
+	await get_tree().process_frame
+	position_smoothing_enabled = true
+	position_smoothing_speed = 7.0
 	
-	offset.x = lerp(offset.x, target_offset, lookahead_speed * delta)		
+func _process(delta: float) -> void:
+	set_screen_position()	
+	
+func set_screen_position():
+	var player_pos = player.global_position
+	var x = floor(player_pos.x / screen_size.x) * screen_size.x + screen_size.x / 2
+	var y = floor(player_pos.y / screen_size.y) * screen_size.y + screen_size.y / 2
+	global_position = Vector2(x, y)

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bv0lydghheuer"]
+
+[ext_resource type="Texture2D" uid="uid://c7ii8s33sj1ci" path="res://assets/background/Parallax/forest/back.png" id="1_tqfwk"]
+[ext_resource type="Texture2D" uid="uid://dyjl47ect24qa" path="res://assets/background/Parallax/forest/middle.png" id="2_f2psk"]
+[ext_resource type="Texture2D" uid="uid://bvrpgqsvwl28y" path="res://assets/background/Parallax/forest/front.png" id="3_e6rao"]
+
+[node name="ParallaxBackgroundAutumn" type="Node2D" unique_id=2057856491]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1554001048]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1631.98, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=63968327]
+position = Vector2(459.80002, 320.80002)
+scale = Vector2(6, 6)
+texture = ExtResource("1_tqfwk")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=974263290]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1631.98, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1238514138]
+position = Vector2(459.80002, 320.80002)
+scale = Vector2(6, 6)
+texture = ExtResource("2_f2psk")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1264319177]
+repeat_size = Vector2(1631.98, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=618602343]
+position = Vector2(459.80002, 320.80002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e6rao")

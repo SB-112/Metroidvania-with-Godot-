@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://ga8tg2ova4nt"]
+
+[ext_resource type="Script" uid="uid://bg1deyk0hkrkg" path="res://scripts/main_menu.gd" id="1_tfcbk"]
+[ext_resource type="FontFile" uid="uid://6q3sas6jryjf" path="res://assets/UI/fonts/Cinzel-Regular.ttf" id="2_5jstl"]
+[ext_resource type="Texture2D" uid="uid://baxk6icd2hu1c" path="res://assets/UI/MainMenuBG/mainmenu_bg.png" id="2_e2p27"]
+[ext_resource type="FontFile" uid="uid://cs2pa2870dhj0" path="res://assets/UI/fonts/Cinzel-Medium.ttf" id="3_5jstl"]
+[ext_resource type="Texture2D" uid="uid://ch3o2kmitmnj7" path="res://assets/UI/MainMenuBG/Group 7 - 5.png" id="5_ngj32"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kauvy"]
+texture = ExtResource("2_e2p27")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfcbk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2p27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngj32"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bm8t2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm8t2"]
+atlas = ExtResource("5_ngj32")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d4ag"]
+atlas = ExtResource("5_ngj32")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um6dh"]
+atlas = ExtResource("5_ngj32")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf7fl"]
+atlas = ExtResource("5_ngj32")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6l81"]
+atlas = ExtResource("5_ngj32")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1wsg"]
+atlas = ExtResource("5_ngj32")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7p8e"]
+atlas = ExtResource("5_ngj32")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfthw"]
+atlas = ExtResource("5_ngj32")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kauvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm8t2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d4ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um6dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf7fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6l81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1wsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7p8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfthw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="MainMenu" type="Control" unique_id=22731572]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfcbk")
+
+[node name="Panel" type="Panel" parent="." unique_id=1391821255]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kauvy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1438935712]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 329.0
+offset_right = 381.0
+offset_bottom = 520.0
+theme_override_constants/separation = 14
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=589581279]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_5jstl")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tfcbk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e2p27")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ngj32")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bm8t2")
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=306073715]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_5jstl")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tfcbk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e2p27")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ngj32")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bm8t2")
+text = "OPTIONS"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1551660938]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_5jstl")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tfcbk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e2p27")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ngj32")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bm8t2")
+text = "EXIT"
+
+[node name="Label" type="Label" parent="." unique_id=2041681176]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -199.0
+offset_right = 181.0
+offset_bottom = -116.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.34901962)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_5jstl")
+theme_override_font_sizes/font_size = 85
+text = "Beyond the Horizon"
+
+[node name="Fire" type="AnimatedSprite2D" parent="." unique_id=705437056]
+position = Vector2(825.99994, 401.99997)
+scale = Vector2(3.905, 3.905)
+sprite_frames = SubResource("SpriteFrames_kauvy")
+autoplay = "default"
+frame_progress = 0.09173773
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]

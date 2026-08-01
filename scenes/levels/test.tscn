@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bdwb7c0bbjri2"]
 
-[ext_resource type="PackedScene" uid="uid://o035upqj0e7n" path="res://scenes/decoration/parallax_background.tscn" id="1_uyl1e"]
+[ext_resource type="PackedScene" uid="uid://o035upqj0e7n" path="res://scenes/decoration/parallax_background_winter.tscn" id="1_uyl1e"]
 [ext_resource type="PackedScene" uid="uid://kmmckm86yl33" path="res://scenes/player/player.tscn" id="3_koekj"]
-[ext_resource type="Script" uid="uid://bung5adla8ky" path="res://scripts/camera_2d.gd" id="4_kw13u"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="4_kw13u"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yp2xm"]
 load_path = "res://.godot/imported/Terrain (16 x 16).png-f54891e4e8717f39eadc60092ced6165.ctex"

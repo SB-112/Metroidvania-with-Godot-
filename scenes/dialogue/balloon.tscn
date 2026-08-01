@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bowb4pmdacpa1" path="res://assets/UI/Borders/panel-000.png" id="2_t5syq"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://cdn0b5ofqy04w" path="res://assets/UI/fonts/Kenney Future Narrow.ttf" id="4_t5syq"]
+[ext_resource type="AudioStream" uid="uid://b7u5uu0eexmpn" path="res://assets/sfx/select_3.wav" id="6_onvhc"]
 
 [sub_resource type="GDScript" id="GDScript_2qb27"]
 script/source = "extends CanvasLayer
@@ -437,6 +438,7 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]
 unique_name_in_owner = true
+stream = ExtResource("6_onvhc")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

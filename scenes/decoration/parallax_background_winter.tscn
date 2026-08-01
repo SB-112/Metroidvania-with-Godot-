@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://o035upqj0e7n"]
 
-[ext_resource type="Texture2D" uid="uid://csgla2uhyxhw6" path="res://assets/background/Parallax/1.png" id="1_43lo3"]
-[ext_resource type="Texture2D" uid="uid://cftmew6vnl7k5" path="res://assets/background/Parallax/2.png" id="2_vks76"]
-[ext_resource type="Texture2D" uid="uid://6puvdf2fefl7" path="res://assets/background/Parallax/3.png" id="3_e1668"]
-[ext_resource type="Texture2D" uid="uid://2weml54irw73" path="res://assets/background/Parallax/4.png" id="4_sqyhh"]
-[ext_resource type="Texture2D" uid="uid://c76b5fdvnpnhe" path="res://assets/background/Parallax/5.png" id="5_610q5"]
-[ext_resource type="Texture2D" uid="uid://dx42fdb1skr17" path="res://assets/background/Parallax/6.png" id="6_ekgfk"]
-[ext_resource type="Texture2D" uid="uid://mosy8s5yq3l6" path="res://assets/background/Parallax/7.png" id="7_vks76"]
+[ext_resource type="Texture2D" uid="uid://csgla2uhyxhw6" path="res://assets/background/Parallax/winter/1.png" id="1_43lo3"]
+[ext_resource type="Texture2D" uid="uid://cftmew6vnl7k5" path="res://assets/background/Parallax/winter/2.png" id="2_vks76"]
+[ext_resource type="Texture2D" uid="uid://6puvdf2fefl7" path="res://assets/background/Parallax/winter/3.png" id="3_e1668"]
+[ext_resource type="Texture2D" uid="uid://2weml54irw73" path="res://assets/background/Parallax/winter/4.png" id="4_sqyhh"]
+[ext_resource type="Texture2D" uid="uid://c76b5fdvnpnhe" path="res://assets/background/Parallax/winter/5.png" id="5_610q5"]
+[ext_resource type="Texture2D" uid="uid://dx42fdb1skr17" path="res://assets/background/Parallax/winter/6.png" id="6_ekgfk"]
+[ext_resource type="Texture2D" uid="uid://mosy8s5yq3l6" path="res://assets/background/Parallax/winter/7.png" id="7_vks76"]
 
 [node name="ParallaxBackgroundAutumn" type="Node2D" unique_id=2057856491]
 

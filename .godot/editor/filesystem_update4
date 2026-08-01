@@ -1,7 +1,2 @@
-res://scenes/dialogue/balloon.tscn
-res://scenes/levels/level0.tscn
-res://scripts/actionable.gd
-res://scenes/actionable.tscn
-res://scripts/player.gd
-res://scenes/letter_box_effect.tscn
-res://scripts/letter_box_effect.gd
+res://scenes/UI/main_menu.tscn
+res://scripts/main_menu.gd
