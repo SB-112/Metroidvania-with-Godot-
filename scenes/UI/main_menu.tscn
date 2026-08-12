@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg1deyk0hkrkg" path="res://scripts/main_menu.gd" id="1_tfcbk"]
 [ext_resource type="FontFile" uid="uid://6q3sas6jryjf" path="res://assets/UI/fonts/Cinzel-Regular.ttf" id="2_5jstl"]
-[ext_resource type="Texture2D" uid="uid://baxk6icd2hu1c" path="res://assets/UI/MainMenuBG/mainmenu_bg.png" id="2_e2p27"]
+[ext_resource type="Texture2D" uid="uid://df5g6fw6uon2g" path="res://assets/UI/MainMenuBG/BG1.jpg" id="2_e2p27"]
 [ext_resource type="FontFile" uid="uid://cs2pa2870dhj0" path="res://assets/UI/fonts/Cinzel-Medium.ttf" id="3_5jstl"]
 [ext_resource type="Texture2D" uid="uid://ch3o2kmitmnj7" path="res://assets/UI/MainMenuBG/Group 7 - 5.png" id="5_ngj32"]
 
@@ -78,8 +78,45 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 9.0
+"speed": 10.0
 }]
+
+[sub_resource type="Animation" id="Animation_e2p27"]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ngj32"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bm8t2"]
+_data = {
+&"FadeIn": SubResource("Animation_e2p27"),
+&"RESET": SubResource("Animation_ngj32")
+}
 
 [node name="MainMenu" type="Control" unique_id=22731572]
 layout_mode = 3
@@ -153,10 +190,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -181.0
-offset_top = -199.0
-offset_right = 181.0
-offset_bottom = -116.5
+offset_left = -474.5
+offset_top = -215.25
+offset_right = 474.5
+offset_bottom = -100.25
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -165,7 +202,7 @@ theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("3_5jstl")
-theme_override_font_sizes/font_size = 85
+theme_override_font_sizes/font_size = 88
 text = "Beyond the Horizon"
 
 [node name="Fire" type="AnimatedSprite2D" parent="." unique_id=705437056]
@@ -173,7 +210,13 @@ position = Vector2(825.99994, 401.99997)
 scale = Vector2(3.905, 3.905)
 sprite_frames = SubResource("SpriteFrames_kauvy")
 autoplay = "default"
-frame_progress = 0.09173773
+frame_progress = 0.68179375
+
+[node name="Fade" type="CanvasModulate" parent="." unique_id=2027630392]
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=809673298]
+libraries/ = SubResource("AnimationLibrary_bm8t2")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_pressed"]

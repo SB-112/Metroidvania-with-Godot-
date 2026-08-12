@@ -799,7 +799,7 @@ scale = Vector2(1.8, 1.8)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1884416611]
 visible = false
-color = Color(0.6, 0.93333334, 0.6666667, 1)
+color = Color(0.36405703, 0.2940457, 0.3642174, 1)
 
 [node name="PigNPC" parent="." unique_id=1618033260 instance=ExtResource("5_ry65h")]
 position = Vector2(1946, 226)

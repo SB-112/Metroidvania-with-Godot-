@@ -1,0 +1,17 @@
+res://addons/dialogue_manager/example_balloon/example_balloon.tscn::f1c219b3631ee45373cbf00c3f7c5aae::1782743445::res://.godot/exported/133200997/export-57fc9b32a4ae3d4a3041b46baf4b8f92-example_balloon.scn
+res://addons/dialogue_manager/example_balloon/small_example_balloon.tscn::ad39f864cd724c0ab85c37ccb1b3962b::1782743445::res://.godot/exported/133200997/export-25872080cd204f02261b5746b425708f-small_example_balloon.scn
+res://addons/dialogue_manager/dialogue_label.tscn::5087c11b45dfaf8effc779674dfe11e8::1782743445::res://.godot/exported/133200997/export-e41b7d5321416240678013b406b79557-dialogue_label.scn
+res://addons/dialogue_manager/test_scene.tscn::5946a9a55ceff988ba46e7f734ff0538::1782743445::res://.godot/exported/133200997/export-74a175fe1e216df3bdf79c5c27a2ac2c-test_scene.scn
+res://scenes/decoration/parallax_background_forest.tscn::f74ec84c6482b606b581db34670e5af6::1784462597::res://.godot/exported/133200997/export-f79ff41812ea2241c297358ebdf81be3-parallax_background_forest.scn
+res://scenes/decoration/parallax_background_winter.tscn::98d1a97508da2900110e5b8da147d988::1784462346::res://.godot/exported/133200997/export-3b4e670ef364d74f79562e2fac4e5f8b-parallax_background_winter.scn
+res://scenes/dialogue/balloon.tscn::dea76ca486e2bcb7e707f2d593ed0fa9::1784442535::res://.godot/exported/133200997/export-4c24a0e5ce3976fc8b1a759bf82b61de-balloon.scn
+res://scenes/levels/level0.tscn::c28d3ac73132d2f7a98f000c47dbea54::1786458973::res://.godot/exported/133200997/export-5e98508bd57e2caa75f74641239ffb56-level0.scn
+res://scenes/levels/test.tscn::ce706f657e4f98d0201f956126cb62b0::1784462393::res://.godot/exported/133200997/export-81c5d4fcfc098f78c4282dd2e360cb04-test.scn
+res://scenes/npc/pig_npc.tscn::b18d1d5c895b28d53681f00f817b573e::1783260162::res://.godot/exported/133200997/export-21d154f1347b77b282b134963dd9d3ba-pig_npc.scn
+res://scenes/particles/Snow_Particles.tscn::33719bf5778f1956e9d9fd7e97444d9f::1784205274::res://.godot/exported/133200997/export-655d4b1d04bbb30336c68feb469a909f-Snow_Particles.scn
+res://scenes/player/player.tscn::e8c9aa634135e142aac6cd867fc6de3f::1785826205::res://.godot/exported/133200997/export-c2c62cb8c73458cd122faf659769dc80-player.scn
+res://scenes/UI/main_menu.tscn::acb5ae2d9c4c26ea6e6fb489a8c37d32::1785807650::res://.godot/exported/133200997/export-0d81a41f2d9092422dafb2d1dd9121a9-main_menu.scn
+res://scenes/actionable.tscn::0ce1d844a3b8315a9e767f2e754f02d8::1784381900::res://.godot/exported/133200997/export-a883e76a223c15d693cc10103e2c0ec3-actionable.scn
+res://scenes/Camera.tscn::c9480ceb94cc2fc8bfcbb49cb45e8fb2::1784208806::res://.godot/exported/133200997/export-7dec1e79b1b8bcc979795597d23b153a-Camera.scn
+res://scenes/camera_bounds.tscn::7de7e64d67ef8acb05ff5ba35a2d37b1::1784507184::res://.godot/exported/133200997/export-72055086496e013fe97cc3d89056df8f-camera_bounds.scn
+res://scenes/letter_box_effect.tscn::9a57e83e447cdfb9a714a0c9801171be::1784383519::res://.godot/exported/133200997/export-06951d0cdb5d9ff7cb5bcac2617eda59-letter_box_effect.scn

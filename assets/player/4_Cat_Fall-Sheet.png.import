@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b002xu86lymes"
-path="res://.godot/imported/Sprite_Sheet.png-8f9c35785c75997861ef1c1bedc5c750.ctex"
+uid="uid://7loks7rhmq22"
+path="res://.godot/imported/4_Cat_Fall-Sheet.png-0b8737e1fcb695a1e079539c0f2dc615.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Sprite_Sheet.png"
-dest_files=["res://.godot/imported/Sprite_Sheet.png-8f9c35785c75997861ef1c1bedc5c750.ctex"]
+source_file="res://assets/player/4_Cat_Fall-Sheet.png"
+dest_files=["res://.godot/imported/4_Cat_Fall-Sheet.png-0b8737e1fcb695a1e079539c0f2dc615.ctex"]
 
 [params]
 

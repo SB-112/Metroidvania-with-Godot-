@@ -1,6 +1,6 @@
 ~ start
 Tusk: Oh — hey! Didn't expect to see anyone out this way.
-Wanderer: ...
+: ...
 Tusk: Not much of a talker, huh.
 - "What is this place?"
     => what_is_this_place

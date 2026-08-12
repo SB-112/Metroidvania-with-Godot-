@@ -12,7 +12,7 @@ titles = {
 "start": "1",
 "what_is_this_place": "12"
 }
-character_names = PackedStringArray("Tusk", "Wanderer")
+character_names = PackedStringArray("Tusk", "")
 first_title = "0"
 lines = {
 "0": {
@@ -88,7 +88,6 @@ lines = {
 &"type": ""
 },
 "2": {
-&"character": "Wanderer",
 &"id": "2",
 &"next_id": "3",
 &"text": "...",
@@ -201,7 +200,7 @@ lines = {
 }
 raw_text = "~ start
 Tusk: Oh — hey! Didn't expect to see anyone out this way.
-Wanderer: ...
+: ...
 Tusk: Not much of a talker, huh.
 - \"What is this place?\"
     => what_is_this_place

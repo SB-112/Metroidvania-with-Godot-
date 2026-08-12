@@ -20,7 +20,8 @@ const DOUBLE_JUMP_VELOCITY := -450
 const WALL_SLIDE_GRAVITY := 300.0
 const WALL_SLIDE_VELCITY := 500.0
 const DASH_SPEED := 700.0
-
+const DASH_DUR := 0.15
+var active_dash_time := 0.0
 
 #animatedsprite2d
 @onready var anim: AnimatedSprite2D = %AnimatedSprite2D
@@ -75,7 +76,8 @@ func switch_state(to_state: STATES) ->void:
 		STATES.FLOOR:
 			can_double_jump = true		
 			player_land_sfx.play()
-			can_dash = true
+			if dash_timer.is_stopped():
+				can_dash = true
 		STATES.JUMP:
 			anim.play("jump");
 			velocity.y = JUMP_VELOCITY
@@ -88,6 +90,7 @@ func switch_state(to_state: STATES) ->void:
 			player_double_jump_sfx.play(0.08)
 		STATES.DASH:
 			dash_timer.start()
+			active_dash_time = DASH_DUR
 			player_double_jump_sfx.play()
 			anim.play("dash")
 			can_dash = false
@@ -144,6 +147,13 @@ func process_state(delta: float) -> void:
 		STATES.DASH:
 			velocity.x =DASH_SPEED * dash_direction
 			velocity.y = 0		
+			
+			active_dash_time -= delta
+			if active_dash_time <= 0.0:
+				if is_on_floor():
+					switch_state(STATES.FLOOR)
+				else:
+					switch_state(STATES.FALL)	
 				
 				
 func handle_movement(delta):
@@ -168,6 +178,7 @@ func _on_dialogue_finished(_resource) -> void:
 
 
 func _on_dash_timer_timeout() -> void:
+	can_dash = true
 	if is_on_floor():
 		switch_state(STATES.FLOOR)
 	else:

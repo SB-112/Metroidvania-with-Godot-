@@ -1,6 +1,10 @@
+Label
+CanvasLayer
+PointLight2D
+AnimationPlayer
+CanvasModulate
 AnimatedSprite2D
 VBoxContainer
-Label
 TextureRect
 Button
 Panel
@@ -8,8 +12,3 @@ Camera2D
 Marker2D
 Node2D
 CollisionShape2D
-Area2D
-ColorRect
-CanvasLayer
-Timer
-RayCast2D
