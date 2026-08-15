@@ -1,0 +1,332 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_k6275"]
+
+[resource]
+script = ExtResource("1_k6275")
+using_states = PackedStringArray()
+titles = {
+"choices": "17",
+"start": "1"
+}
+character_names = PackedStringArray("Guard", "Hiro")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"not"
+}, {
+&"i": 7,
+&"type": &"variable",
+&"value": "States"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "has_met_Hiro"
+}])
+},
+&"id": "1",
+&"next_id": "2",
+&"next_id_after": "14",
+&"next_sibling_id": "7",
+&"type": "condition"
+},
+"10": {
+&"character": "Guard",
+&"id": "10",
+&"next_id": "12",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "8",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "9",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "10",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "11",
+&"weight": 1.0
+}]),
+&"text": "I told you, you can't pass!",
+&"type": "dialogue"
+},
+"11": {
+&"character": "Guard",
+&"id": "11",
+&"next_id": "12",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "8",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "9",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "10",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "11",
+&"weight": 1.0
+}]),
+&"text": "David is [wave]GAY[/wave]",
+&"type": "dialogue"
+},
+"12": {
+&"id": "12",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"13": {
+&"id": "13",
+&"next_id": "14",
+&"type": ""
+},
+"14": {
+&"id": "14",
+&"is_snippet": false,
+&"next_id": "17",
+&"next_id_after": "",
+&"type": "goto"
+},
+"15": {
+&"id": "15",
+&"next_id": "17",
+&"type": "title"
+},
+"16": {
+&"id": "16",
+&"next_id": "17",
+&"type": ""
+},
+"17": {
+&"id": "17",
+&"next_id": "18",
+&"responses": PackedStringArray("17", "23"),
+&"text": "When will your shift be over?",
+&"type": "response"
+},
+"18": {
+&"character": "Guard",
+&"id": "18",
+&"next_id": "19",
+&"text": "Until the mountain bell rings.",
+&"type": "dialogue"
+},
+"19": {
+&"character": "Hiro",
+&"id": "19",
+&"next_id": "20",
+&"text": "The mountain bell?",
+&"type": "dialogue"
+},
+"2": {
+&"id": "2",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "States"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"i": 11,
+&"type": &"variable",
+&"value": "has_met_Hiro"
+}, {
+&"i": 24,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 26,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "4",
+&"type": "mutation"
+},
+"20": {
+&"character": "Guard",
+&"id": "20",
+&"next_id": "21",
+&"text": "The old bell that watches over the mountain pass.",
+&"type": "dialogue"
+},
+"21": {
+&"id": "21",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": ""
+},
+"23": {
+&"id": "23",
+&"next_id": "24",
+&"text": "I want to go out.",
+&"type": "response"
+},
+"24": {
+&"character": "Guard",
+&"id": "24",
+&"next_id": "25",
+&"text": "You can't. No one who passes this gate returns alive.",
+&"type": "dialogue"
+},
+"25": {
+&"character": "Guard",
+&"id": "25",
+&"next_id": "26",
+&"text": "Better go home",
+&"type": "dialogue"
+},
+"26": {
+&"id": "26",
+&"is_snippet": false,
+&"next_id": "17",
+&"next_id_after": "",
+&"type": "goto"
+},
+"27": {
+&"id": "27",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"3": {
+&"id": "3",
+&"next_id": "4",
+&"type": ""
+},
+"4": {
+&"character": "Guard",
+&"id": "4",
+&"next_id": "5",
+&"text": "Sorry, Hiro. Can't let you through.",
+&"type": "dialogue"
+},
+"5": {
+&"character": "Hiro",
+&"id": "5",
+&"next_id": "6",
+&"text": "Why can't I pass?",
+&"type": "dialogue"
+},
+"6": {
+&"character": "Guard",
+&"id": "6",
+&"next_id": "14",
+&"text": "Outside this gate is very dangerous.a",
+&"type": "dialogue"
+},
+"7": {
+&"condition": {},
+&"id": "7",
+&"next_id": "8",
+&"next_id_after": "14",
+&"type": "condition"
+},
+"8": {
+&"character": "Guard",
+&"id": "8",
+&"next_id": "12",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "8",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "9",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "10",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "11",
+&"weight": 1.0
+}]),
+&"text": "Go home, Hiro!",
+&"type": "dialogue"
+},
+"9": {
+&"character": "Guard",
+&"id": "9",
+&"next_id": "12",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "8",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "9",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "10",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "11",
+&"weight": 1.0
+}]),
+&"text": "You're still here, Hiro?",
+&"type": "dialogue"
+}
+}
+raw_text = "~ start
+if not States.has_met_Hiro:
+	set States.has_met_Hiro = true
+
+	Guard: Sorry, Hiro. Can't let you through.
+	Hiro: Why can't I pass?
+	Guard: Outside this gate is very dangerous.a
+else:
+	% Guard: Go home, Hiro!
+	% Guard: You're still here, Hiro?
+	% Guard: I told you, you can't pass!
+	% Guard: David is [wave]GAY[/wave]
+	=> END
+
+=> choices
+~ choices
+
+- When will your shift be over?
+	Guard: Until the mountain bell rings.
+	Hiro: The mountain bell?
+	Guard: The old bell that watches over the mountain pass.
+	=> END
+
+- I want to go out.
+	Guard: You can't. No one who passes this gate returns alive.
+	Guard: Better go home
+	=> choices"
+metadata/dialogue_manager_version = "3.10.4"

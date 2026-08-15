@@ -1,50 +1,79 @@
 [gd_scene format=3 uid="uid://c1athkumdnw0d"]
 
-[ext_resource type="Texture2D" uid="uid://dtd6nh5e7y2fn" path="res://assets/npc/pig/Idle (34x28).png" id="1_j5on6"]
+[ext_resource type="Script" uid="uid://c5er1f5c3qggu" path="res://scripts/pig_npc.gd" id="1_csix5"]
+[ext_resource type="Texture2D" uid="uid://c0vyuvsddwh1e" path="res://assets/npc/guard/Guard.png" id="1_j5on6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_csix5"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(0, 0, 34, 28)
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jxayx"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(34, 0, 34, 28)
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fokdl"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(68, 0, 34, 28)
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vf3io"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(102, 0, 34, 28)
+region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5nalx"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(136, 0, 34, 28)
+region = Rect2(128, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aksd1"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(170, 0, 34, 28)
+region = Rect2(160, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmtn4"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(204, 0, 34, 28)
+region = Rect2(192, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6prh5"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(238, 0, 34, 28)
+region = Rect2(224, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t6mw"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(272, 0, 34, 28)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvldx"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(306, 0, 34, 28)
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wpyi"]
 atlas = ExtResource("1_j5on6")
-region = Rect2(340, 0, 34, 28)
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvn7k"]
+atlas = ExtResource("1_j5on6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcvs3"]
+atlas = ExtResource("1_j5on6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xll4o"]
+atlas = ExtResource("1_j5on6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w23ya"]
+atlas = ExtResource("1_j5on6")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhir8"]
+atlas = ExtResource("1_j5on6")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yumen"]
+atlas = ExtResource("1_j5on6")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f17d7"]
+atlas = ExtResource("1_j5on6")
+region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kauvy"]
 animations = [{
@@ -72,7 +101,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6prh5")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6t6mw")
 }, {
@@ -81,16 +115,38 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4wpyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvn7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcvs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xll4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w23ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhir8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yumen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f17d7")
 }],
 "loop": 1,
-"name": &"idle",
-"speed": 10.0
+"name": &"run",
+"speed": 5.0
 }]
 
-[node name="Tusk" type="Node2D" unique_id=1618033260]
+[node name="Guard" type="Node2D" unique_id=1618033260]
+script = ExtResource("1_csix5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=60374051]
 sprite_frames = SubResource("SpriteFrames_kauvy")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.114690535
+flip_h = true

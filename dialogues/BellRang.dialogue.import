@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dynbgo55c4fcp"
+path="res://.godot/imported/BellRang.dialogue-96c54effd989c27f9eccda6969fff8d4.tres"
+
+[deps]
+
+source_file="res://dialogues/BellRang.dialogue"
+dest_files=["res://.godot/imported/BellRang.dialogue-96c54effd989c27f9eccda6969fff8d4.tres"]
+
+[params]
+
+defaults=true

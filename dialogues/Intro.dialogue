@@ -1,0 +1,27 @@
+~ start
+if not States.has_met_Hiro:
+	set States.has_met_Hiro = true
+
+	Guard: Sorry, Hiro. Can't let you through.
+	Hiro: Why can't I pass?
+	Guard: Outside this gate is very dangerous.a
+else:
+	% Guard: Go home, Hiro!
+	% Guard: You're still here, Hiro?
+	% Guard: I told you, you can't pass!
+	% Guard: David is [wave]GAY[/wave]
+	=> END
+
+=> choices
+~ choices
+
+- When will your shift be over?
+	Guard: Until the mountain bell rings.
+	Hiro: The mountain bell?
+	Guard: The old bell that watches over the mountain pass.
+	=> END
+
+- I want to go out.
+	Guard: You can't. No one who passes this gate returns alive.
+	Guard: Better go home
+	=> choices

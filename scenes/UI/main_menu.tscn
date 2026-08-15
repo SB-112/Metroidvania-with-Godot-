@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bg1deyk0hkrkg" path="res://scripts/main_menu.gd" id="1_tfcbk"]
 [ext_resource type="FontFile" uid="uid://6q3sas6jryjf" path="res://assets/UI/fonts/Cinzel-Regular.ttf" id="2_5jstl"]
-[ext_resource type="Texture2D" uid="uid://df5g6fw6uon2g" path="res://assets/UI/MainMenuBG/BG1.jpg" id="2_e2p27"]
+[ext_resource type="Texture2D" uid="uid://f5ah7raedcrp" path="res://assets/UI/MainMenuBG/MainMenuBG.jpg" id="2_bm8t2"]
 [ext_resource type="FontFile" uid="uid://cs2pa2870dhj0" path="res://assets/UI/fonts/Cinzel-Medium.ttf" id="3_5jstl"]
 [ext_resource type="Texture2D" uid="uid://ch3o2kmitmnj7" path="res://assets/UI/MainMenuBG/Group 7 - 5.png" id="5_ngj32"]
+[ext_resource type="AudioStream" uid="uid://bk7q1wg63need" path="res://assets/audio/MainMenuMusic.mp3" id="6_ngj32"]
+[ext_resource type="AudioStream" uid="uid://3fs1bc04ll7g" path="res://assets/audio/FireSFX.mp3" id="7_bm8t2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kauvy"]
-texture = ExtResource("2_e2p27")
+texture = ExtResource("2_bm8t2")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfcbk"]
 
@@ -98,7 +100,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_ngj32"]
-length = 0.001
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -136,7 +138,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_kauvy")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1438935712]
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1438935712]
 layout_mode = 0
 offset_left = 180.0
 offset_top = 329.0
@@ -144,7 +146,7 @@ offset_right = 381.0
 offset_bottom = 520.0
 theme_override_constants/separation = 14
 
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=589581279]
+[node name="StartButton" type="Button" parent="Buttons" unique_id=589581279]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -157,7 +159,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_ngj32")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_bm8t2")
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=306073715]
+[node name="OptionsButton" type="Button" parent="Buttons" unique_id=306073715]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -170,7 +172,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_ngj32")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_bm8t2")
 text = "OPTIONS"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1551660938]
+[node name="ExitButton" type="Button" parent="Buttons" unique_id=1551660938]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -218,6 +220,62 @@ color = Color(0, 0, 0, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=809673298]
 libraries/ = SubResource("AnimationLibrary_bm8t2")
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]
+[node name="OptionsMenu" type="ColorRect" parent="." unique_id=869698812]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -413.375
+offset_top = -256.75
+offset_right = 413.375
+offset_bottom = 256.75
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.023529412, 0, 0.13333334, 0.91764706)
+
+[node name="Label" type="Label" parent="OptionsMenu" unique_id=1179365459]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 25.75
+offset_bottom = 80.75
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_5jstl")
+theme_override_font_sizes/font_size = 40
+text = "Options"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="OptionsMenu" unique_id=455224265]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 132.0
+offset_right = 75.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_5jstl")
+theme_override_font_sizes/font_size = 35
+text = "Back"
+flat = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=1354992043]
+stream = ExtResource("6_ngj32")
+volume_db = 10.0
+autoplay = true
+
+[node name="FireSFX" type="AudioStreamPlayer2D" parent="." unique_id=1660662948]
+stream = ExtResource("7_bm8t2")
+volume_db = 10.0
+autoplay = true
+
+[connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="OptionsMenu/BackButton" to="." method="_on_back_button_pressed"]

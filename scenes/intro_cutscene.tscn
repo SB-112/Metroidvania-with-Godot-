@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dlf1midbn4p63"]
+
+[ext_resource type="Script" uid="uid://ihs66l333b7l" path="res://scripts/intro_cutscene.gd" id="1_juow0"]
+[ext_resource type="VideoStream" uid="uid://dnu3gtxnb7c0h" path="res://assets/cutscenes/Intro.ogv" id="1_vuduy"]
+[ext_resource type="FontFile" uid="uid://cs2pa2870dhj0" path="res://assets/UI/fonts/Cinzel-Medium.ttf" id="3_3438a"]
+
+[node name="IntroCutscene" type="CanvasLayer" unique_id=1369055725]
+script = ExtResource("1_juow0")
+
+[node name="Control" type="Control" parent="." unique_id=1338276756]
+texture_filter = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control" unique_id=849958057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_vuduy")
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=533626687]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.5
+offset_top = -46.0
+offset_right = 155.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_3438a")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[wave]Press M to Skip Cutscene[/wave]"

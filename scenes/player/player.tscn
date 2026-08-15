@@ -233,15 +233,71 @@ size = Vector2(11.965812, 30.75)
 [sub_resource type="CircleShape2D" id="CircleShape2D_kauvy"]
 radius = 42.047592
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h17s1"]
+random_pitch = 1.3348398
+streams_count = 1
+stream_0/stream = ExtResource("4_lvxji")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5gtgg"]
+random_pitch = 1.0656005
+streams_count = 1
+stream_0/stream = ExtResource("5_p47bc")
+
+[sub_resource type="Curve" id="Curve_5gtgg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ss4hd"]
+curve = SubResource("Curve_5gtgg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_66l5y"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 100, 0)
+scale_min = 4.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_ss4hd")
+
+[sub_resource type="Gradient" id="Gradient_5gtgg"]
+offsets = PackedFloat32Array(0, 0.39922482, 0.8875969)
+colors = PackedColorArray(0, 0, 0, 1, 0.30131006, 0.30131006, 0.30131006, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h17s1"]
+gradient = SubResource("Gradient_5gtgg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5gtgg"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -0.3, 0)
+spread = 20.0
+initial_velocity_min = 30.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 20, 0)
+scale_min = 3.0
+scale_max = 6.0
+color_ramp = SubResource("GradientTexture1D_h17s1")
+
+[sub_resource type="Gradient" id="Gradient_h17s1"]
+offsets = PackedFloat32Array(0.09539474, 0.5794702)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kauvy"]
+gradient = SubResource("Gradient_h17s1")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=1465160475 groups=["player"]]
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=495445945]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(-0.75, 0)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kauvy")
-animation = &"dash"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=948084442]
@@ -270,20 +326,44 @@ one_shot = true
 
 [node name="PlayerFootstepsSFX" type="AudioStreamPlayer2D" parent="SFX" unique_id=640605101]
 stream = ExtResource("3_gmlin")
-volume_db = -20.0
+volume_db = -10.0
 
 [node name="PlayerJumpSFX" type="AudioStreamPlayer2D" parent="SFX" unique_id=426653994]
-stream = ExtResource("4_lvxji")
-volume_db = -20.0
+stream = SubResource("AudioStreamRandomizer_h17s1")
+volume_db = -10.0
 
 [node name="PlayerLandSFX" type="AudioStreamPlayer2D" parent="SFX" unique_id=57977138]
-stream = ExtResource("5_p47bc")
-volume_db = -35.0
+stream = SubResource("AudioStreamRandomizer_5gtgg")
+volume_db = -20.0
 pitch_scale = 0.55
 
 [node name="PlayerDoubleJumpSFX" type="AudioStreamPlayer2D" parent="SFX" unique_id=895780659]
 stream = ExtResource("6_75vfm")
-volume_db = -20.0
+volume_db = -10.0
 pitch_scale = 0.55
 
+[node name="JumpParticles" type="GPUParticles2D" parent="." unique_id=913500878]
+position = Vector2(0, 22)
+emitting = false
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_66l5y")
+
+[node name="RunParticles" type="GPUParticles2D" parent="." unique_id=1459227037]
+position = Vector2(0, 15)
+emitting = false
+amount = 15
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_5gtgg")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=313493015]
+color = Color(0, 0.9607843, 0.91764706, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = SubResource("GradientTexture2D_kauvy")
+texture_scale = 3.5
+
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

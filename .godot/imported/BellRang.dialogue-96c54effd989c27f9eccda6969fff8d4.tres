@@ -1,0 +1,151 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_hpcwe"]
+
+[resource]
+script = ExtResource("1_hpcwe")
+using_states = PackedStringArray()
+titles = {
+"start": "1"
+}
+character_names = PackedStringArray("Guard", "\"\"")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"not"
+}, {
+&"i": 7,
+&"type": &"variable",
+&"value": "States"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "bell_rang"
+}])
+},
+&"id": "1",
+&"next_id": "2",
+&"next_id_after": "8",
+&"next_sibling_id": "6",
+&"type": "condition"
+},
+"2": {
+&"id": "2",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "States"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"i": 11,
+&"type": &"variable",
+&"value": "bell_rang"
+}, {
+&"i": 21,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 23,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "3",
+&"type": "mutation"
+},
+"3": {
+&"id": "3",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "States"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"i": 11,
+&"type": &"variable",
+&"value": "gate_openable"
+}, {
+&"i": 25,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 27,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "4",
+&"type": "mutation"
+},
+"4": {
+&"character": "Guard",
+&"id": "4",
+&"next_id": "5",
+&"text": "Oh! Finally the bell rang",
+&"type": "dialogue"
+},
+"5": {
+&"character": "Guard",
+&"id": "5",
+&"next_id": "8",
+&"text": "I can finally go home!",
+&"type": "dialogue"
+},
+"6": {
+&"condition": {},
+&"id": "6",
+&"next_id": "7",
+&"next_id_after": "8",
+&"type": "condition"
+},
+"7": {
+&"character": "\"\"",
+&"id": "7",
+&"next_id": "8",
+&"text": "Stop ringing the bell!",
+&"type": "dialogue"
+},
+"8": {
+&"id": "8",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"9": {
+&"id": "9",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ start
+if not States.bell_rang:
+	set States.bell_rang = true
+	set States.gate_openable = true
+	Guard: Oh! Finally the bell rang
+	Guard: I can finally go home!
+else:
+	\"\": Stop ringing the bell!
+=> END"
+metadata/dialogue_manager_version = "3.10.4"

@@ -1,0 +1,5 @@
+~ start
+if not States.gate_openable:
+	set States.gate_openable = true
+	Hiro: Finally! The gate is open
+=> END

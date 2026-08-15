@@ -2,20 +2,35 @@
 
 [ext_resource type="Script" uid="uid://b07fdqav8n74g" path="res://scripts/actionable.gd" id="1_7304x"]
 [ext_resource type="Resource" uid="uid://xasq0jtimlj4" path="res://dialogues/test.dialogue" id="2_163qw"]
+[ext_resource type="Texture2D" uid="uid://ds8gmuodd7cgf" path="res://assets/UI/Borders/button_round_gloss.png" id="3_xy3fm"]
+[ext_resource type="FontFile" uid="uid://cs2pa2870dhj0" path="res://assets/UI/fonts/Cinzel-Medium.ttf" id="4_dxxjm"]
 
 [node name="Actionable" type="Area2D" unique_id=1263258694]
 collision_layer = 16
 script = ExtResource("1_7304x")
 dialogue_resource = ExtResource("2_163qw")
 
-[node name="Label" type="Label" parent="." unique_id=400794394]
-offset_left = -2.0
-offset_top = -30.0
-offset_right = 4.0
-offset_bottom = -16.0
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1559789786]
+texture_filter = 2
+offset_left = -5.0
+offset_top = -24.0
+offset_right = 123.0
+offset_bottom = 104.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_xy3fm")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=400794394]
+layout_mode = 0
+offset_left = 35.0
+offset_right = 109.0
+offset_bottom = 169.0
 theme_override_colors/font_color = Color(0.0253638, 0.0253638, 0.025363795, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_fonts/font = ExtResource("4_dxxjm")
+theme_override_font_sizes/font_size = 99
 text = "E"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=735240412]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

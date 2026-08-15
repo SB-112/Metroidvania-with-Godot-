@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://b1jl3o2055oo"]
+
+[ext_resource type="Script" uid="uid://ctd0fwkjb054b" path="res://scripts/scene_transitions.gd" id="1_e3sh4"]
+[ext_resource type="Shader" uid="uid://six3jlnwsu2j" path="res://shaders/scene_transitions.gdshader" id="2_17awk"]
+[ext_resource type="Texture2D" uid="uid://ch3o2kmitmnj7" path="res://assets/UI/MainMenuBG/Group 7 - 5.png" id="2_vyvuk"]
+[ext_resource type="FontFile" uid="uid://cs2pa2870dhj0" path="res://assets/UI/fonts/Cinzel-Medium.ttf" id="3_17awk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_juow0"]
+shader = ExtResource("2_17awk")
+shader_parameter/_CirclePosition = Vector2(0.5, 0.55)
+shader_parameter/_Progress = 0.0
+shader_parameter/_Smoothness = 0.03
+shader_parameter/_Background = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_yqtup"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(18.892157, 18.892157, 18.892157, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fire:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/_Progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vyvuk"]
+resource_name = "dissolve"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.51),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(18.892157, 18.892157, 18.892157, 0), Color(18.892157, 18.892157, 18.892157, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fire:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/_Progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.51),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.999999977648]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17awk"]
+_data = {
+&"RESET": SubResource("Animation_yqtup"),
+&"dissolve": SubResource("Animation_vyvuk")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knkoy"]
+atlas = ExtResource("2_vyvuk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrae"]
+atlas = ExtResource("2_vyvuk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s05wo"]
+atlas = ExtResource("2_vyvuk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2cp5"]
+atlas = ExtResource("2_vyvuk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sxoa"]
+atlas = ExtResource("2_vyvuk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee5vd"]
+atlas = ExtResource("2_vyvuk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylko7"]
+atlas = ExtResource("2_vyvuk")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbrqu"]
+atlas = ExtResource("2_vyvuk")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kauvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knkoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s05wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2cp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sxoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee5vd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylko7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbrqu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="scene_transitions" type="CanvasLayer" unique_id=1919268921]
+layer = 3
+script = ExtResource("1_e3sh4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=460734954]
+material = SubResource("ShaderMaterial_juow0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.4159807, 0.41598034, 0.4159804, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=483280720]
+libraries/ = SubResource("AnimationLibrary_17awk")
+
+[node name="Fire" type="AnimatedSprite2D" parent="." unique_id=2092328946]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(80, 564)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_kauvy")
+autoplay = "default"
+frame = 3
+frame_progress = 0.6312237
+
+[node name="Label" type="Label" parent="." unique_id=1058158818]
+modulate = Color(18.892157, 18.892157, 18.892157, 0)
+offset_left = 144.0
+offset_top = 551.0
+offset_right = 601.0
+offset_bottom = 602.0
+theme_override_fonts/font = ExtResource("3_17awk")
+theme_override_font_sizes/font_size = 37
+text = "Getting Things Ready..."

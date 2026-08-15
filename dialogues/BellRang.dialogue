@@ -1,0 +1,9 @@
+~ start
+if not States.bell_rang:
+	set States.bell_rang = true
+	set States.gate_openable = true
+	Guard: Oh! Finally the bell rang
+	Guard: I can finally go home!
+else:
+	"": Stop ringing the bell!
+=> END

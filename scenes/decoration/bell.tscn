@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d178r3kjx47pq"]
+
+[ext_resource type="Texture2D" uid="uid://dmbxblecp5f55" path="res://assets/terrain/Decoration/bell.png" id="1_qkwq4"]
+
+[node name="Bell" type="Node2D" unique_id=1738999408]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=805098259]
+texture = ExtResource("1_qkwq4")

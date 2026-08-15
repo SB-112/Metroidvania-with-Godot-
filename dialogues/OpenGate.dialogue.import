@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bxptgsgwwg820"
+path="res://.godot/imported/OpenGate.dialogue-8b3c0ac3957fdd2e4d7a335849be5032.tres"
+
+[deps]
+
+source_file="res://dialogues/OpenGate.dialogue"
+dest_files=["res://.godot/imported/OpenGate.dialogue-8b3c0ac3957fdd2e4d7a335849be5032.tres"]
+
+[params]
+
+defaults=true

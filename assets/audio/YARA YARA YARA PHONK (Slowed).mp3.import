@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxua3jl47x6qx"
+path="res://.godot/imported/YARA YARA YARA PHONK (Slowed).mp3-d5af1adab935372f6588484bb58b584f.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/YARA YARA YARA PHONK (Slowed).mp3"
+dest_files=["res://.godot/imported/YARA YARA YARA PHONK (Slowed).mp3-d5af1adab935372f6588484bb58b584f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var player: CharacterBody2D = $"."
+
 #enums
 enum STATES {
 	FLOOR,
@@ -16,7 +18,7 @@ const WALK_VELOCITY := 330.0
 const ACCELERATION := 2500.0
 const JUMP_VELOCITY := -540.0
 const JUMP_DECELERATION := 1300.0
-const DOUBLE_JUMP_VELOCITY := -450
+const DOUBLE_JUMP_VELOCITY := -520
 const WALL_SLIDE_GRAVITY := 300.0
 const WALL_SLIDE_VELCITY := 500.0
 const DASH_SPEED := 700.0
@@ -26,6 +28,10 @@ var active_dash_time := 0.0
 #animatedsprite2d
 @onready var anim: AnimatedSprite2D = %AnimatedSprite2D
 @onready var coyote_timer: Timer = $CoyoteTimer
+
+#particles
+@onready var jump_particles: GPUParticles2D = $JumpParticles
+@onready var run_particles: GPUParticles2D = $RunParticles
 
 
 #sfx
@@ -51,6 +57,25 @@ var can_double_jump := false
 
 func _ready() -> void:
 	switch_state(active_state)
+	await get_tree().create_timer(1.5).timeout
+	can_move = false
+	anim.play("run")
+	player_footsteps_sfx.play()
+
+	var tween = create_tween()
+	tween.tween_property(
+		player,
+		"position:x",
+		player.position.x + 200,
+		1.0
+	)
+
+	await tween.finished
+
+	anim.play("idle")
+	player_footsteps_sfx.stop()
+	can_move = true
+	
 	
 func _physics_process(delta: float) -> void:
 	if !can_move:
@@ -58,6 +83,7 @@ func _physics_process(delta: float) -> void:
 		
 	process_state(delta)
 	move_and_slide()
+
 	
 func switch_state(to_state: STATES) ->void:
 	var previous_state = active_state
@@ -65,6 +91,7 @@ func switch_state(to_state: STATES) ->void:
 	
 	if previous_state == STATES.FLOOR and to_state != STATES.FLOOR:
 		player_footsteps_sfx.stop()
+		run_particles.emitting = false
 	
 	match active_state:
 		STATES.FALL:
@@ -83,11 +110,13 @@ func switch_state(to_state: STATES) ->void:
 			velocity.y = JUMP_VELOCITY
 			coyote_timer.stop()	
 			player_jump_sfx.play()
+			jump_particles.restart()
 		STATES.DOUBLE_JUMP:
 			anim.play("jump")
 			velocity.y = DOUBLE_JUMP_VELOCITY
 			can_double_jump = false	
 			player_double_jump_sfx.play(0.08)
+			jump_particles.restart()
 		STATES.DASH:
 			dash_timer.start()
 			active_dash_time = DASH_DUR
@@ -124,16 +153,22 @@ func process_state(delta: float) -> void:
 				anim.play("run")
 				if !player_footsteps_sfx.playing:
 					player_footsteps_sfx.play()
+					
+				# --- Add this line to turn particles on when running ---
+				run_particles.emitting = true
 			else:
 				anim.play("idle")
 				player_footsteps_sfx.stop()
+				
+				# --- Add this line to turn particles off when standing still ---
+				run_particles.emitting = false
 				
 			handle_movement(delta)	
 			
 			if not is_on_floor():
 				switch_state(STATES.FALL)
 			elif Input.is_action_just_pressed("jump"):
-				switch_state(STATES.JUMP)		
+				switch_state(STATES.JUMP)
 		STATES.JUMP, STATES.DOUBLE_JUMP:
 			if try_dash():
 				return
@@ -188,4 +223,5 @@ func try_dash() -> bool:
 	if Input.is_action_just_pressed("dash") and can_dash:
 		switch_state(STATES.DASH)
 		return true
-	return false		
+	return false	
+	
