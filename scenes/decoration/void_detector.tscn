@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://mh70n2aglui"]
+
+[ext_resource type="Script" uid="uid://c1n5ejlylclcp" path="res://scripts/void_detector.gd" id="1_ljdtf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kauvy"]
+
+[node name="VoidDetector" type="Area2D" unique_id=1806920203]
+script = ExtResource("1_ljdtf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=58579867]
+shape = SubResource("WorldBoundaryShape2D_kauvy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

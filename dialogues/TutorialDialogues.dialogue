@@ -1,0 +1,29 @@
+~ MovementTutorial
+"": "A / D — Move Left / Right"
+"": "Space / M — Jump (Hold to Jump Higher)"
+=> END
+
+~ DoubleJumpTutorial
+"": Press M/Space again while airborne to perform a Double Jump
+=> END
+
+~ DashTutorial
+"": "Press N/Shift to Dash in the direction you're facing."
+=> END
+
+~ CheckpointTutorial
+"": Stone pillars record your path.
+"": If you die, you will respawn at the last stone checkpoint you touched.
+=> END
+
+~ WarningSign
+"": WARNING! Turn back now!
+=> END
+
+~ SpikesTutorial
+"": "Avoid touching spikes—[wait=1]they are fatal!"
+=> END
+
+
+
+

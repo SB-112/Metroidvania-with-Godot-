@@ -1,27 +1,29 @@
 ~ start
 if not States.has_met_Hiro:
 	set States.has_met_Hiro = true
-
-	Guard: Sorry, Hiro. Can't let you through.
-	Hiro: Why can't I pass?
-	Guard: Outside this gate is very dangerous.a
+	set States.has_talked_to_guard = true
+	Guard: "Halt, Hiro. The council's mandate remains absolute—the outer perimeter is off-limits to all villagers."
+	Hiro: "I'm not looking for trouble. I just need you to open the gate."
+	Hiro: I just need that gate opened!
+	Guard: "And violate protocol? Look around you, boy. That mountain isn't a gateway; it's a boundary meant to keep us alive."
 else:
-	% Guard: Go home, Hiro!
-	% Guard: You're still here, Hiro?
-	% Guard: I told you, you can't pass!
-	% Guard: David is [wave]GAY[/wave]
+	% Guard: "Save your breath, Hiro. My standing orders haven't changed."
+	% Guard: "Standing near the threshold won't make the iron yield, kid."
+	% Guard: "Go back to the district before the elders notice you're missing."
 	=> END
 
 => choices
+
 ~ choices
 
-- When will your shift be over?
-	Guard: Until the mountain bell rings.
-	Hiro: The mountain bell?
-	Guard: The old bell that watches over the mountain pass.
+- "When does your watch shift officially end?"
+	Guard: "My relief isn't bound by a clock. Protocol dictates I remain stationed here until the summit chime echoes through the valley."
+	Hiro: "The summit chime?"
+	Guard: "The ancient bronze bell perched on the eastern overlook. When it sounds, the morning guard takes over and I step down."
 	=> END
 
-- I want to go out.
-	Guard: You can't. No one who passes this gate returns alive.
-	Guard: Better go home
+- "Why is the village so terrified of what's beyond?"
+	Guard: "Fear is what keeps this community intact. History proves that those who foolishly cross the threshold never return to tell the story."
+	Guard: "Turn back, Hiro. Curiosity is a dangerous luxury."
 	=> choices
+	=> END

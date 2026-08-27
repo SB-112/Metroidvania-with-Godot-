@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ct4tvah3dupub"
+path="res://.godot/imported/Robert Miles – Children (Slowed — Best Part Looped).mp3-f845ee5168520204dcc8d2c3c6bdbb44.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Robert Miles – Children (Slowed — Best Part Looped).mp3"
+dest_files=["res://.godot/imported/Robert Miles – Children (Slowed — Best Part Looped).mp3-f845ee5168520204dcc8d2c3c6bdbb44.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

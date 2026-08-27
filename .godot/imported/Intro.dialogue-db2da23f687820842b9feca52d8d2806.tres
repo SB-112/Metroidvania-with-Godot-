@@ -6,7 +6,7 @@
 script = ExtResource("1_k6275")
 using_states = PackedStringArray()
 titles = {
-"choices": "17",
+"choices": "18",
 "start": "1"
 }
 character_names = PackedStringArray("Guard", "Hiro")
@@ -38,7 +38,7 @@ lines = {
 &"id": "1",
 &"next_id": "2",
 &"next_id_after": "14",
-&"next_sibling_id": "7",
+&"next_sibling_id": "8",
 &"type": "condition"
 },
 "10": {
@@ -47,10 +47,6 @@ lines = {
 &"next_id": "12",
 &"siblings": Array[Dictionary]([{
 &"condition": {},
-&"id": "8",
-&"weight": 1.0
-}, {
-&"condition": {},
 &"id": "9",
 &"weight": 1.0
 }, {
@@ -62,7 +58,7 @@ lines = {
 &"id": "11",
 &"weight": 1.0
 }]),
-&"text": "I told you, you can't pass!",
+&"text": "\"Standing near the threshold won't make the iron yield, kid.\"",
 &"type": "dialogue"
 },
 "11": {
@@ -71,10 +67,6 @@ lines = {
 &"next_id": "12",
 &"siblings": Array[Dictionary]([{
 &"condition": {},
-&"id": "8",
-&"weight": 1.0
-}, {
-&"condition": {},
 &"id": "9",
 &"weight": 1.0
 }, {
@@ -86,7 +78,7 @@ lines = {
 &"id": "11",
 &"weight": 1.0
 }]),
-&"text": "David is [wave]GAY[/wave]",
+&"text": "\"Go back to the district before the elders notice you're missing.\"",
 &"type": "dialogue"
 },
 "12": {
@@ -104,39 +96,37 @@ lines = {
 "14": {
 &"id": "14",
 &"is_snippet": false,
-&"next_id": "17",
+&"next_id": "18",
 &"next_id_after": "",
 &"type": "goto"
 },
 "15": {
 &"id": "15",
-&"next_id": "17",
-&"type": "title"
+&"next_id": "16",
+&"type": ""
 },
 "16": {
 &"id": "16",
-&"next_id": "17",
-&"type": ""
+&"next_id": "18",
+&"type": "title"
 },
 "17": {
 &"id": "17",
 &"next_id": "18",
-&"responses": PackedStringArray("17", "23"),
-&"text": "When will your shift be over?",
-&"type": "response"
+&"type": ""
 },
 "18": {
-&"character": "Guard",
 &"id": "18",
 &"next_id": "19",
-&"text": "Until the mountain bell rings.",
-&"type": "dialogue"
+&"responses": PackedStringArray("18", "24"),
+&"text": "\"When does your watch shift officially end?\"",
+&"type": "response"
 },
 "19": {
-&"character": "Hiro",
+&"character": "Guard",
 &"id": "19",
 &"next_id": "20",
-&"text": "The mountain bell?",
+&"text": "\"My relief isn't bound by a clock. Protocol dictates I remain stationed here until the summit chime echoes through the valley.\"",
 &"type": "dialogue"
 },
 "2": {
@@ -164,57 +154,71 @@ lines = {
 }]),
 &"is_blocking": true
 },
-&"next_id": "4",
+&"next_id": "3",
 &"type": "mutation"
 },
 "20": {
-&"character": "Guard",
+&"character": "Hiro",
 &"id": "20",
 &"next_id": "21",
-&"text": "The old bell that watches over the mountain pass.",
+&"text": "\"The summit chime?\"",
 &"type": "dialogue"
 },
 "21": {
+&"character": "Guard",
 &"id": "21",
+&"next_id": "22",
+&"text": "\"The ancient bronze bell perched on the eastern overlook. When it sounds, the morning guard takes over and I step down.\"",
+&"type": "dialogue"
+},
+"22": {
+&"id": "22",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
 &"type": "goto"
 },
-"22": {
-&"id": "22",
-&"next_id": "23",
-&"type": ""
-},
 "23": {
 &"id": "23",
 &"next_id": "24",
-&"text": "I want to go out.",
-&"type": "response"
+&"type": ""
 },
 "24": {
-&"character": "Guard",
 &"id": "24",
 &"next_id": "25",
-&"text": "You can't. No one who passes this gate returns alive.",
-&"type": "dialogue"
+&"text": "\"Why is the village so terrified of what's beyond?\"",
+&"type": "response"
 },
 "25": {
 &"character": "Guard",
 &"id": "25",
 &"next_id": "26",
-&"text": "Better go home",
+&"text": "\"Fear is what keeps this community intact. History proves that those who foolishly cross the threshold never return to tell the story.\"",
 &"type": "dialogue"
 },
 "26": {
+&"character": "Guard",
 &"id": "26",
-&"is_snippet": false,
-&"next_id": "17",
-&"next_id_after": "",
-&"type": "goto"
+&"next_id": "27",
+&"text": "\"Turn back, Hiro. Curiosity is a dangerous luxury.\"",
+&"type": "dialogue"
 },
 "27": {
 &"id": "27",
+&"is_snippet": false,
+&"next_id": "18",
+&"next_id_after": "",
+&"type": "goto"
+},
+"28": {
+&"id": "28",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"29": {
+&"id": "29",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
@@ -222,60 +226,66 @@ lines = {
 },
 "3": {
 &"id": "3",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "States"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"i": 11,
+&"type": &"variable",
+&"value": "has_talked_to_guard"
+}, {
+&"i": 31,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 33,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
 &"next_id": "4",
-&"type": ""
+&"type": "mutation"
 },
 "4": {
 &"character": "Guard",
 &"id": "4",
 &"next_id": "5",
-&"text": "Sorry, Hiro. Can't let you through.",
+&"text": "\"Halt, Hiro. The council's mandate remains absolute—the outer perimeter is off-limits to all villagers.\"",
 &"type": "dialogue"
 },
 "5": {
 &"character": "Hiro",
 &"id": "5",
 &"next_id": "6",
-&"text": "Why can't I pass?",
+&"text": "\"I'm not looking for trouble. I just need you to open the gate.\"",
 &"type": "dialogue"
 },
 "6": {
-&"character": "Guard",
+&"character": "Hiro",
 &"id": "6",
-&"next_id": "14",
-&"text": "Outside this gate is very dangerous.a",
+&"next_id": "7",
+&"text": "I just need that gate opened!",
 &"type": "dialogue"
 },
 "7": {
-&"condition": {},
+&"character": "Guard",
 &"id": "7",
-&"next_id": "8",
-&"next_id_after": "14",
-&"type": "condition"
+&"next_id": "14",
+&"text": "\"And violate protocol? Look around you, boy. That mountain isn't a gateway; it's a boundary meant to keep us alive.\"",
+&"type": "dialogue"
 },
 "8": {
-&"character": "Guard",
-&"id": "8",
-&"next_id": "12",
-&"siblings": Array[Dictionary]([{
 &"condition": {},
 &"id": "8",
-&"weight": 1.0
-}, {
-&"condition": {},
-&"id": "9",
-&"weight": 1.0
-}, {
-&"condition": {},
-&"id": "10",
-&"weight": 1.0
-}, {
-&"condition": {},
-&"id": "11",
-&"weight": 1.0
-}]),
-&"text": "Go home, Hiro!",
-&"type": "dialogue"
+&"next_id": "9",
+&"next_id_after": "14",
+&"type": "condition"
 },
 "9": {
 &"character": "Guard",
@@ -283,10 +293,6 @@ lines = {
 &"next_id": "12",
 &"siblings": Array[Dictionary]([{
 &"condition": {},
-&"id": "8",
-&"weight": 1.0
-}, {
-&"condition": {},
 &"id": "9",
 &"weight": 1.0
 }, {
@@ -298,35 +304,37 @@ lines = {
 &"id": "11",
 &"weight": 1.0
 }]),
-&"text": "You're still here, Hiro?",
+&"text": "\"Save your breath, Hiro. My standing orders haven't changed.\"",
 &"type": "dialogue"
 }
 }
 raw_text = "~ start
 if not States.has_met_Hiro:
 	set States.has_met_Hiro = true
-
-	Guard: Sorry, Hiro. Can't let you through.
-	Hiro: Why can't I pass?
-	Guard: Outside this gate is very dangerous.a
+	set States.has_talked_to_guard = true
+	Guard: \"Halt, Hiro. The council's mandate remains absolute—the outer perimeter is off-limits to all villagers.\"
+	Hiro: \"I'm not looking for trouble. I just need you to open the gate.\"
+	Hiro: I just need that gate opened!
+	Guard: \"And violate protocol? Look around you, boy. That mountain isn't a gateway; it's a boundary meant to keep us alive.\"
 else:
-	% Guard: Go home, Hiro!
-	% Guard: You're still here, Hiro?
-	% Guard: I told you, you can't pass!
-	% Guard: David is [wave]GAY[/wave]
+	% Guard: \"Save your breath, Hiro. My standing orders haven't changed.\"
+	% Guard: \"Standing near the threshold won't make the iron yield, kid.\"
+	% Guard: \"Go back to the district before the elders notice you're missing.\"
 	=> END
 
 => choices
+
 ~ choices
 
-- When will your shift be over?
-	Guard: Until the mountain bell rings.
-	Hiro: The mountain bell?
-	Guard: The old bell that watches over the mountain pass.
+- \"When does your watch shift officially end?\"
+	Guard: \"My relief isn't bound by a clock. Protocol dictates I remain stationed here until the summit chime echoes through the valley.\"
+	Hiro: \"The summit chime?\"
+	Guard: \"The ancient bronze bell perched on the eastern overlook. When it sounds, the morning guard takes over and I step down.\"
 	=> END
 
-- I want to go out.
-	Guard: You can't. No one who passes this gate returns alive.
-	Guard: Better go home
-	=> choices"
+- \"Why is the village so terrified of what's beyond?\"
+	Guard: \"Fear is what keeps this community intact. History proves that those who foolishly cross the threshold never return to tell the story.\"
+	Guard: \"Turn back, Hiro. Curiosity is a dangerous luxury.\"
+	=> choices
+	=> END"
 metadata/dialogue_manager_version = "3.10.4"

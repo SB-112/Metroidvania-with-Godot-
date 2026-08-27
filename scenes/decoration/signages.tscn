@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://caqj8ib47tg3r"]
+
+[ext_resource type="Texture2D" uid="uid://ck3w1nrighokb" path="res://assets/terrain/Decoration/8.png" id="1_liu5o"]
+[ext_resource type="PackedScene" uid="uid://bx4u1uxfqj082" path="res://scenes/actionable.tscn" id="2_abj6d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kauvy"]
+radius = 12.562345
+
+[node name="Signages" type="Node2D" unique_id=332058055]
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=132444269]
+texture = ExtResource("1_liu5o")
+
+[node name="Actionable" parent="AnimatedSprite2D" unique_id=1263258694 instance=ExtResource("2_abj6d")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Actionable" unique_id=1202247090]
+shape = SubResource("CircleShape2D_kauvy")

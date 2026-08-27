@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://10vfcs21jl04"
+path="res://.godot/imported/SnowPig.dialogue-8c7b0a000faa92aa20765159a5464aab.tres"
+
+[deps]
+
+source_file="res://dialogues/SnowPig.dialogue"
+dest_files=["res://.godot/imported/SnowPig.dialogue-8c7b0a000faa92aa20765159a5464aab.tres"]
+
+[params]
+
+defaults=true

@@ -8,18 +8,20 @@ extends Area2D
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer
 
 func _ready() -> void:
-	e_prompt.hide()
+	HUD.hide_label()
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		e_prompt.show()
+		HUD.show_label()
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
-		e_prompt.hide()
+		HUD.hide_label()
 
 func action():
-	e_prompt.hide()
+	HUD.hide_label()
 
 	if interaction_sound:
 		audio_stream_player.stream = interaction_sound

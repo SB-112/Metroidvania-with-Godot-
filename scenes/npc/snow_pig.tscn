@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cydkd37nqubvq"]
+
+[ext_resource type="Texture2D" uid="uid://cnt2achurfrqc" path="res://assets/npc/snow_pig/Idle (34x28).png" id="1_l1v2p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y48pc"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(0, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy7vl"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(34, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa5pv"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(68, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3h7m"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(102, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l847x"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(136, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7at5"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(170, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4pow"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(204, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rwnr"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(238, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1svv"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(272, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huri6"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(306, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32xgj"]
+atlas = ExtResource("1_l1v2p")
+region = Rect2(340, 0, 34, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kauvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y48pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy7vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa5pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3h7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l847x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7at5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4pow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rwnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1svv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huri6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32xgj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_l1v2p"]
+offsets = PackedFloat32Array(0.08940397, 0.6721854)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kauvy"]
+gradient = SubResource("Gradient_l1v2p")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="SnowPig" type="Node2D" unique_id=47101711]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1364473285]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_kauvy")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1423227357]
+position = Vector2(8, 25)
+texture = SubResource("GradientTexture2D_kauvy")
+texture_scale = 3.0

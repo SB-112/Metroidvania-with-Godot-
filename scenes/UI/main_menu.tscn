@@ -6,7 +6,9 @@
 [ext_resource type="FontFile" uid="uid://cs2pa2870dhj0" path="res://assets/UI/fonts/Cinzel-Medium.ttf" id="3_5jstl"]
 [ext_resource type="Texture2D" uid="uid://ch3o2kmitmnj7" path="res://assets/UI/MainMenuBG/Group 7 - 5.png" id="5_ngj32"]
 [ext_resource type="AudioStream" uid="uid://bk7q1wg63need" path="res://assets/audio/MainMenuMusic.mp3" id="6_ngj32"]
+[ext_resource type="Texture2D" uid="uid://cpmwidq8jex81" path="res://assets/eastereggs/FB_IMG_17877908326075886.jpg" id="6_um6dh"]
 [ext_resource type="AudioStream" uid="uid://3fs1bc04ll7g" path="res://assets/audio/FireSFX.mp3" id="7_bm8t2"]
+[ext_resource type="PackedScene" uid="uid://csbad0qxaj2vq" path="res://scenes/particles/Snow_Particles.tscn" id="8_5d4ag"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kauvy"]
 texture = ExtResource("2_bm8t2")
@@ -215,6 +217,7 @@ autoplay = "default"
 frame_progress = 0.68179375
 
 [node name="Fade" type="CanvasModulate" parent="." unique_id=2027630392]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=809673298]
@@ -265,6 +268,22 @@ theme_override_font_sizes/font_size = 35
 text = "Back"
 flat = true
 
+[node name="TextureRect" type="TextureRect" parent="OptionsMenu" unique_id=1014145336]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -148.0
+offset_right = 917.0
+offset_bottom = 714.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_um6dh")
+
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=1354992043]
 stream = ExtResource("6_ngj32")
 volume_db = 10.0
@@ -274,6 +293,9 @@ autoplay = true
 stream = ExtResource("7_bm8t2")
 volume_db = 10.0
 autoplay = true
+
+[node name="GPUParticles2D2" parent="." unique_id=182518760 instance=ExtResource("8_5d4ag")]
+position = Vector2(504, -8)
 
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_options_pressed"]

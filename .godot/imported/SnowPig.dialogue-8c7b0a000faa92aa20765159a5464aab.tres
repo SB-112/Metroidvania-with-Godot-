@@ -1,0 +1,92 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_cqvjd"]
+
+[resource]
+script = ExtResource("1_cqvjd")
+using_states = PackedStringArray()
+titles = {
+"snow_pig": "1"
+}
+character_names = PackedStringArray("Tusk")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Tusk",
+&"id": "1",
+&"next_id": "2",
+&"text": "Traveler, the mountain gate yields only to those who follow the journey's natural path.",
+&"type": "dialogue"
+},
+"2": {
+&"character": "Tusk",
+&"id": "2",
+&"next_id": "3",
+&"text": "Listen closely to the wanderer's verse:",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Tusk",
+&"id": "3",
+&"next_id": "4",
+&"text": "\"A traveler treads where the green grass sways in the wind.\"",
+&"type": "dialogue"
+},
+"4": {
+&"character": "Tusk",
+&"id": "4",
+&"next_id": "5",
+&"text": "\"Night falls as the crackling campfire warms the bitter chill.\"",
+&"type": "dialogue"
+},
+"5": {
+&"character": "Tusk",
+&"id": "5",
+&"next_id": "6",
+&"text": "\"Dawn breaks as footsteps climb the lonely peak of the highest hill.\"",
+&"type": "dialogue"
+},
+"6": {
+&"character": "Tusk",
+&"id": "6",
+&"next_id": "7",
+&"text": "\"Escaping the sun, the journey ends in shadows buried deep within the cave.\"",
+&"type": "dialogue"
+},
+"7": {
+&"character": "Tusk",
+&"id": "7",
+&"next_id": "8",
+&"text": "Follow the wanderer's journey across the lands, and the gate shall open.",
+&"type": "dialogue"
+},
+"8": {
+&"id": "8",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"9": {
+&"id": "9",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ snow_pig
+Tusk: Traveler, the mountain gate yields only to those who follow the journey's natural path.
+Tusk: Listen closely to the wanderer's verse:
+Tusk: \"A traveler treads where the green grass sways in the wind.\"
+Tusk: \"Night falls as the crackling campfire warms the bitter chill.\"
+Tusk: \"Dawn breaks as footsteps climb the lonely peak of the highest hill.\"
+Tusk: \"Escaping the sun, the journey ends in shadows buried deep within the cave.\"
+Tusk: Follow the wanderer's journey across the lands, and the gate shall open.
+=> END"
+metadata/dialogue_manager_version = "3.10.4"

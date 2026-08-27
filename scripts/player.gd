@@ -202,6 +202,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		var actionables = actionable_detector.get_overlapping_areas()
 		if actionables.size() > 0:
 			can_move = false
+			anim.play("idle")
 			LetterBoxEffect.show_bars()
 			actionables[0].action()
 			DialogueManager.dialogue_ended.connect(_on_dialogue_finished, CONNECT_ONE_SHOT)

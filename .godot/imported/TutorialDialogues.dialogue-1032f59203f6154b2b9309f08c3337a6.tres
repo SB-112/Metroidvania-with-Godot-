@@ -1,0 +1,215 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_tmk8v"]
+
+[resource]
+script = ExtResource("1_tmk8v")
+using_states = PackedStringArray()
+titles = {
+"CheckpointTutorial": "14",
+"DashTutorial": "10",
+"DoubleJumpTutorial": "6",
+"MovementTutorial": "1",
+"SpikesTutorial": "23",
+"WarningSign": "19"
+}
+character_names = PackedStringArray("\"\"")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "\"\"",
+&"id": "1",
+&"next_id": "2",
+&"text": "\"A / D — Move Left / Right\"",
+&"type": "dialogue"
+},
+"10": {
+&"character": "\"\"",
+&"id": "10",
+&"next_id": "11",
+&"text": "\"Press N/Shift to Dash in the direction you're facing.\"",
+&"type": "dialogue"
+},
+"11": {
+&"id": "11",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"12": {
+&"id": "12",
+&"next_id": "13",
+&"type": ""
+},
+"13": {
+&"id": "13",
+&"next_id": "14",
+&"type": "title"
+},
+"14": {
+&"character": "\"\"",
+&"id": "14",
+&"next_id": "15",
+&"text": "Stone pillars record your path.",
+&"type": "dialogue"
+},
+"15": {
+&"character": "\"\"",
+&"id": "15",
+&"next_id": "16",
+&"text": "If you die, you will respawn at the last stone checkpoint you touched.",
+&"type": "dialogue"
+},
+"16": {
+&"id": "16",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"17": {
+&"id": "17",
+&"next_id": "18",
+&"type": ""
+},
+"18": {
+&"id": "18",
+&"next_id": "19",
+&"type": "title"
+},
+"19": {
+&"character": "\"\"",
+&"id": "19",
+&"next_id": "20",
+&"text": "WARNING! Turn back now!",
+&"type": "dialogue"
+},
+"2": {
+&"character": "\"\"",
+&"id": "2",
+&"next_id": "3",
+&"text": "\"Space / M — Jump (Hold to Jump Higher)\"",
+&"type": "dialogue"
+},
+"20": {
+&"id": "20",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"21": {
+&"id": "21",
+&"next_id": "22",
+&"type": ""
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": "title"
+},
+"23": {
+&"character": "\"\"",
+&"id": "23",
+&"next_id": "24",
+&"text": "\"Avoid touching spikes—[wait=1]they are fatal!\"",
+&"type": "dialogue"
+},
+"24": {
+&"id": "24",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"29": {
+&"id": "29",
+&"next_id": "30",
+&"type": ""
+},
+"3": {
+&"id": "3",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"30": {
+&"id": "30",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"4": {
+&"id": "4",
+&"next_id": "5",
+&"type": ""
+},
+"5": {
+&"id": "5",
+&"next_id": "6",
+&"type": "title"
+},
+"6": {
+&"character": "\"\"",
+&"id": "6",
+&"next_id": "7",
+&"text": "Press M/Space again while airborne to perform a Double Jump",
+&"type": "dialogue"
+},
+"7": {
+&"id": "7",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"8": {
+&"id": "8",
+&"next_id": "9",
+&"type": ""
+},
+"9": {
+&"id": "9",
+&"next_id": "10",
+&"type": "title"
+}
+}
+raw_text = "~ MovementTutorial
+\"\": \"A / D — Move Left / Right\"
+\"\": \"Space / M — Jump (Hold to Jump Higher)\"
+=> END
+
+~ DoubleJumpTutorial
+\"\": Press M/Space again while airborne to perform a Double Jump
+=> END
+
+~ DashTutorial
+\"\": \"Press N/Shift to Dash in the direction you're facing.\"
+=> END
+
+~ CheckpointTutorial
+\"\": Stone pillars record your path.
+\"\": If you die, you will respawn at the last stone checkpoint you touched.
+=> END
+
+~ WarningSign
+\"\": WARNING! Turn back now!
+=> END
+
+~ SpikesTutorial
+\"\": \"Avoid touching spikes—[wait=1]they are fatal!\"
+=> END
+
+
+
+
+"
+metadata/dialogue_manager_version = "3.10.4"

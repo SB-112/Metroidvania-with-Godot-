@@ -19,9 +19,9 @@ gradient = SubResource("Gradient_vals0")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oem7y"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(700, 1, 1)
-gravity = Vector3(45, 98, 0)
-scale_max = 4.0
+emission_box_extents = Vector3(800, 1, 1)
+gravity = Vector3(-70, 150, 0)
+scale_max = 6.0
 color_initial_ramp = SubResource("GradientTexture1D_ss4hd")
 alpha_curve = SubResource("CurveTexture_xtl5d")
 turbulence_enabled = true
@@ -30,9 +30,11 @@ turbulence_influence_min = 0.020000001
 turbulence_influence_max = 0.080000006
 
 [node name="GPUParticles2D2" type="GPUParticles2D" unique_id=182518760]
-amount = 500
-lifetime = 10.0
+amount = 800
+lifetime = 20.0
 preprocess = 30.0
-visibility_rect = Rect2(-200, -100, 200, 200)
+speed_scale = 3.0
+visibility_rect = Rect2(-576, -324, 1152, 648)
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_oem7y")
 script = ExtResource("1_0fyib")

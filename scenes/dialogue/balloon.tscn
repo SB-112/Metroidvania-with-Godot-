@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://bowb4pmdacpa1" path="res://assets/UI/Borders/panel-000.png" id="2_t5syq"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
-[ext_resource type="FontFile" uid="uid://cdn0b5ofqy04w" path="res://assets/UI/fonts/Kenney Future Narrow.ttf" id="4_t5syq"]
-[ext_resource type="AudioStream" uid="uid://b7u5uu0eexmpn" path="res://assets/sfx/select_3.wav" id="6_onvhc"]
+[ext_resource type="FontFile" uid="uid://cymw4iqqqo80h" path="res://assets/UI/fonts/Poppins-Bold.ttf" id="3_onvhc"]
+[ext_resource type="AudioStream" uid="uid://s4as70s68jnf" path="res://assets/sfx/menu_blip.wav" id="6_onvhc"]
 
 [sub_resource type="GDScript" id="GDScript_2qb27"]
 script/source = "extends CanvasLayer
@@ -385,6 +385,7 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_onvhc")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -396,7 +397,7 @@ modulate = Color(0.9459776, 0.9459776, 0.9459776, 1)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("4_t5syq")
+theme_override_fonts/normal_font = ExtResource("3_onvhc")
 text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1162966119]
@@ -434,7 +435,9 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=914537232]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_onvhc")
 text = "Response example"
+icon_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]
 unique_name_in_owner = true
